@@ -1,0 +1,355 @@
+src 파일경로
+alt 설명 
+width 넓이 이미지 크기 조정 
+height 눂이 이미지 크기 조정 
+
+무조건 자동완성기능으로 프로그램 태크 생성하기 
+
+태그 { 속성 : 값} 
+
+div : 이미지를 하단으로 출력하고 싶을 때 씀 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width: 300px; }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="https://www.resom.co.kr/forest/main/main.asp">
+        <img src="images/1.jpg" alt="리솜리조트 포레스트">
+        </a>
+        </div>
+    <div>
+        <a href="http://www.naver.com">
+        <img src="images/2.jpg" alt="리솜리조트 포레스트">
+        </a>
+    </div>
+    <img src="images/3.png" alt="리솜리조트 포레스트">       
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <!-- target _self : 자신페이지 오픈, _blank : 새창 오픈 -->
+        <li><a href="http://www.google.co.kr" target="_">구글</a></li>
+        <li><a href="http://www.daum.net" target="_">다음</a></li>
+        <li><a href="http://www.naver.com" target="_">네이버</a></li>
+        <li><a href="http://www.gmarket.co.kr" target="_">지마켓</a></li>
+        <li><a href="http://www.coupang.com" target="_">쿠팡</a></li>
+        <li><a href="1.docx"download>쿠팡</a></li>
+    </ul>
+
+
+</body>
+</html>
+
+a href : 링크 연결하여 그 링크 열수 있게 하는 기능 
+target : 페이지 연결 장소 선정 
+download : download 할 건지 말건지 팝업시키는 기능 
+
+id : 전체 페이지의 유일한 주소값, 중복으로 있을 수 없음 
+
+border-radius 사격형 모드로 지정되어져 있름 
+
+            <li><a href="#list1">책 소개</a></li>
+            <li><a href="#list2">이미지</a></li>
+            <li><a href="#list3">책 속으로</a><</li>
+            <li><a href="#list4">작가정보</a><</li>
+
+id로 위치점을 정해놓고 그 위치점으로 이동하는 것 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 900px; }
+        p{text-align: justify;}
+        h5{width: 100px; height: 100px; background: pink;
+            border: 3px solid #952222; text-align: center; padding-top: 40px;
+            border-radius: 50%;
+            box-sizing: border-box;} 
+        h5 a{margin-top: 15px;}
+            
+
+
+    </style>
+</head>
+<body>
+    <div>
+    <h2>교보문고  리스트</h2> 
+    <h3>제목 : 부의 영혼</h3>
+    <hr>
+    <ul>
+            <li><a href="#list1">책 소개</a></li>
+            <li><a href="#list2">이미지</a></li>
+            <li><a href="#list3">책 속으로</a><</li>
+            <li><a href="#list4">작가정보</a><</li>
+        </ul>
+    <h4 id="list1">책소개</h4>
+    <p>“돈을 대하는 태도가 인생을 바꾼다!”<br><br> 
+부자가 되는 사람은 무엇이 다른가<br>
+돈을 벌고, 지키고, 불리는 데 필요한 50가지 부의 원칙<br>
+누구나 부자가 되고 싶어 한다. 더 높은 연봉을 받고, 더 많은 자산을 모으고, 투자에서 더 높은 수익을 얻어 경제적 자유에 가까워지기를 바란다. 그래서 우리는 오를 주식을 찾고, 시장의 방향을 예측하고, 새로운 투자법을 공부하며, 남들보다 조금이라도 먼저 부자가 될 방법을 찾아 헤맨다.<br>
+그런데 정말 그런 것들이 부를 결정할까?
+심리학자이자 행동금융 전문가 대니얼 크로스비는 《부의 영혼》에서 우리가 부자가 되는 데 가장 중요하다고 믿어온 것들이 실제로는 그리 중요하지 않을 수 있다고 말한다. <br>시장을 정확하게 예측하는 능력, 최고의 종목을 골라내는 안목,남들보다 뛰어난 금융 지식보다 훨씬 더 큰 차이를 만들어내는 것들이 있다는 것이다.
+실제로 전문가조차 시장을 지속적으로 이기기 어렵다. 반면 자신의 능력에 투자하고, 큰 재무적 실수를 피하고, 꾸준히 저축하고 투자하는 것, 건강을 관리하고, 좋은 사람과 관계를 맺는 것, <br>자신의 시간을 스스로 통제하는 것. 얼핏 돈과 직접적인 관련이 없어 보이는 이런 선택들이 수십 년 쌓이면서 한 사람의 부를 결정한다.
+결국 부를 결정하는 것은 ‘대박 투자’ 한 번이 아니라 돈을 둘러싼 수많은 선택의 결과다.
+《부의 영혼》은 바로 그 선택에 관한 책이다.<br>
+    </p>
+    <h4 id="list2">이미지</h4>
+    <p><img src="images/b2.jpg"</p>
+    <h4 id="list3">책 속으로</h4>
+    <p>이 책에서 말하는 ‘영혼’은 강렬한 에너지와 감정을 뜻한다. 특히 예술 작품이나 표현을 통해 드러나지만, 그것은 우리의 삶 전반에도 스민다.
+돌아보지 않으면, 얄팍한 부의 추구가 돈의 본질을 앗아갈 수 있다. 그러나 깊이 있는 자기 성찰을 하고, 새로운 삶의 방식을 시도하며, 영혼 있는 삶을 지향할 때, 돈은 본래 의도된 대로 삶을 바꾸는 도구가 될 수 있다. 나는 이 책이 당신의 생각을 흔들고, 잊었던 진리를 깨우며, 돈과 더 솔직하고 살아 있는 관계를 맺게 해주길 바란다. -8~9쪽 <br><br> 
+
+진짜 부는 결승선의 숫자가 아니라, 그 너머에서 시작된다. 진정한 부는 우리가 가진 물질적 풍요를 더 오래가는 만족과 충만으로 잇는 데서 나온다. 돈은 아이스크림 같은 소소한 즐거움(긍정적 감정), 사랑하는 이들과의 여행 같은 추억(관계), 종교나 정신적·정치적 활동에 참여할 자유(의미)를 우리에게 선사할 수 있다. 이 모든 것은 실제로 우리의 행복을 북돋아준다. <br><br>
+그러나 부를 그 자체의 목적처럼 끝없이 좇으면서 다른 행복의 요소들을 희생한다면, 역사와 행동과학이 말해주듯 인생은 텅 비어버리고 영혼은 메말라갈 것이다. -22쪽 <br><br>
+
+투자란 시장을 이기는 것이 아니다. 그것은 우리가 해결해야 할 올바른 문제가 아니다. 투자란 재정적, 그리고 개인적 자유를 확보하는 수단일 뿐이다. 자유의 정의가 사람마다 다를 수는 있어도 말이다. 시장과 우리의 포트폴리오는 온통 수익률이라는 숫자로 도배되어 있기 때문에 사람들은 서로를 비교하고 더 높은 수익률을 좇느라 기를 쓴다.<br><br>
+그러나 대부분의 평범한 사람들에게 벤치마크를 이기고 수익을 극대화하려 애쓰는 것보다 자신의 목표와 가치에 맞춰 주식과 채권의 비율을 정하고, 단순한 자산 배분을 유지하는 것이 훨씬 더 현명하다. -59쪽 <br><br>
+
+돈과 꿈을 연결하면 저축과 투자가 더는 의무가 아니다. 동기가 된다. 게다가 목표 기반 투자(Goals-Based Investing, GBI)는 실제로 더 큰 부를 만들어낸다는 사실이 연구로 증명됐다. 
+2014년, 모닝스타(Morningstar)의 은퇴 연구 책임자였던 데이비드 블란쳇(David Blanchett)은 목표 기반 투자를 활용한 재무설계가 고객 자산을 평균 15% 이상 늘려준다고 밝혔다. 단순히 수익률 같은 성과 기준에 맞추는 것보다 개인의 목표를 중심에 두었을 때 투자자의 만족도도 훨씬 높아졌다.
+목표를 ‘인간적’이고 직관적으로 만들수록 효과는 더욱 커진다. 2009년, 치마(Cheema)와 소만(Soman)의 연구는 돈을 여러 항목으로 나누고, 항목마다 가족 사진처럼 저축의 목적을 떠올리게 하는 시각적 단서를 함께 제시했더니 단순 관리 집단에 비해 저축률이 거의 2배 가까이 증가했다고 밝혔다. -79쪽 <br><br>
+
+많은 이들이 저축과 투자를 그저 ‘해야 하니까’ 한다. 물론 시간이 지나면서 순자산이 늘어나는 모습을 보는 것은 즐겁다. 하지만 단순한 숫자를 넘어, 당신의 돈은 어떤 목적을 위해 존재하는가? 당신에게는 어떤 책임이 있는가? 
+나는 모든 독자의 상황마다 정답을 대신 줄 수 없다. 그 답은 밖에 있지 않다. 프랭클이 말했듯, 결국은 자기 안으로 깊이 들어가 스스로의 ‘이유’를 찾아야 한다. 그 ‘왜’가 있을 때만 당신의 돈은 단순한 숫자가 아니라 삶을 지탱하는 힘이 된다. -82쪽 <br><br>
+
+금융시장도 똑같다. 불확실성이 커지면 사람들은 안전하다고 믿는 현금으로 몰려든다. 2008년 글로벌 금융위기가 대표적인 사례다. 미국 투자회사협회(Investment Company Institute, ICI)에 따르면, 2006년 말 25%도 안 되던 현금 비중이 2009년 초 주식시장이 바닥을 칠 무렵에는 50% 가까이 치솟았다. 시장 변동성이 커지면 ‘안전 자산으로 대탈출’이 이어지기 때문이다. 이후 S&P500 지수가 회복하자 그 돈은 다시 위험 자산으로 흘러들어갔다. 사람들은 장기적으로 더 큰 대가를 치를지라도 당장의 확실성을 더 선호하는 경향이 있음을 보여준다. -86쪽
+
+기대치 또한 바로잡아야 한다. 《돈의 심리학》의 저자 모건 하우절(Morgan Housel)은 변동성을 ‘야구 경기 입장권’에 비유했다. 주식시장이라는 경기장에 들어가기 위해서는 입장료를 내야 하는데, 그게 바로 변동성이라는 것이다. 약세장, 조정, 장기간의 높은 변동성은 시장의 본질이다. 이러한 등락을 자연스런 현상으로 이해하면 불시에 맞닥뜨린 충격에서 훨씬 빨리 회복할 수 있다. -87쪽
+
+더 길게 말할 수도 있지만 이제 감이 충분히 잡혔을 것이다. 당신이 맺은 모든 의미 있는 관계, 도전, 목표에는 크든 작든 위험이 있었다. 시장과 투자의 세계도 다르지 않다. 하루아침에 백만장자가 되는 일은 드물다. 단 한 해에 엄청난 고소득을 올린다고 해서 가능한 일도 아니다. 대부분의 백만장자는 수십 년에 걸쳐 꾸준히 늘어나는 소득을 바탕으로, 일정 비율을 저축하고 투자하며, 고정비를 관리하고, 남과 비교하는 함정에서 자유로워짐으로써 재정적 성공에 이른다. -101쪽
+
+이런 원칙은 돈 문제에도 그대로 적용된다. 왜냐하면 보조금 신청이나 벤처 투자에서 그렇듯, 금융 생활에서도 실수와 손실은 게임의 일부이기 때문이다. 이를 피하려 하지 말고, 마땅히 일어날 일로 받아들여야 한다. 실제로 주식시장의 역사를 보자. 자산 증식의 최강 수단 중 하나라고 할 수 있는 S&P500 지수조차 1928년 이후 약 4년 중 1년꼴로 연간 20% 이상 하락했다는 데이터를 벤 칼슨이 제시했다. 주식시장 역사 속에 큰 폭락은 결코 예외가 아니라 반복되는 현실이었다. 단기적으로 보면, 하루 장 마감 시점에 시장이 하락해 화면이 파랗게 물들 확률은 약 45%다. 이런 하락일을 피하려 애쓰다가는 오히려 더 큰 손실을 맞게 된다. 그래서 전체 데이 트레이더의 80%가 2년 안에 시장을 떠나는 것이다 -117쪽
+
+그렇다면 이 모든 이야기가 당신의 돈과 무슨 관련이 있을까? 심리적으로 우리는 저축과 투자, 즉 부를 쌓는 핵심 행동을 현재의 손실로 인식한다. 미래를 위해 돈을 따로 떼어두는 일은 마음속에서 마치 돈을 불태우는 것과 비슷하게 다가온다. 당장 새 물건을 사거나 재미있는 활동을 즐기는 짜릿함을 포기하고, 불확실한 미래의 이익을 선택하는 일은 그만큼 불쾌하게 느껴진다. -142쪽
+
+투자자도 똑같다. 예를 들어, 갑자기 큰 유산을 받았을 때 당장 투자하기를 망설이는 경우가 많다. 손실에 대한 두려움은 심리적 함정을 잘 아는 사람조차도 얼어붙게 만든다. 설렘과 불안이 뒤섞여 그 돈을 언제 어떻게 굴려야 할지 망설이게 되는 것이다. 시장이 출렁일 때는 현금을 그대로 두는 것이 가장 안전해보이고, 주가가 오른 뒤에는 이미 늦었다는 생각이 든다.
+이럴 때야말로 금융 전문가의 역할이 빛을 발한다. 그들은 사람들이 ‘최적의 순간’을 기다리려는 본능을 인정하면서도 동시에 그 순간이 결코 오지 않는다는 사실을 깨닫게 해준다. 두려움을 직시하면서도 행동하도록 이끄는 것이다.
+시장은 늘 두려워할 이유를 만들어낸다. 모든 자산을 팔아 현금으로 들고 있어야 할 이유도, 새로 생긴 현금을 투자하지 말아야 할 이유도 언제나 등장한다. -154~155쪽
+
+우리 모두의 재정적 미래도 마찬가지다. 어린 시절의 돈 이야기나 과거의 실수에 묶일 때, 재정적 미래는 심각하게 손상된다. 매일의 분주함에 파묻혀, 고개를 들어 수평선 너머의 가능성을 상상조차 하지 못한다면 우리의 재정적 미래는 스스로 무너진다.
+돈과 관련된 미래를 생생하게 그려보는 일은 허황된 비전 보드 놀이가 아니다. 실제로 의사 결정을 단순화하고, 행동을 촉발하는 입증된 방법이다. - 252~253쪽</p>
+    <h4 id="list4">작가정보</h4>
+    <p>저자(글)
+Daniel Crosby <br><br>
+심리학자이자 행동금융 전문가로, 인간의 마음과 금융시장이 만나는 지점을 연구하며, 행동과학을 투자와 자산관리 분야에 적용해왔다. 
+브리검영 대학교와 에모리 대학교에서 공부했으며, 〈뉴욕타임스〉 베스트셀러 작가로 《결국 부자가 되는 사람들의 원칙》, 《제3의 부의 원칙》, 《부의 영혼》은 모두 액시엄 비즈니스 북 어워드(Axiom Business Book Awards) 투자 분야 수상작으로 선정되었다. 세계 각지에서 강연하며 인간의 심리가 금융시장에 미치는 영향과 행동금융에 기반한 투자 원칙을 전하고 있다. 또한 다양한 매체를 통해 투자와 시장심리에 대한 통찰을 꾸준히 소개하고 있으며, 행동금융 분야를 대표하는 전문가로 평가받고 있다.
+세 아이의 아버지인 그는 미국 프로야구 세인트루이스 카디널스의 열성 팬이며, 미국 남부를 여행하는 것을 즐긴다. 필리핀의 음식과 문화, 언어에도 깊은 관심을 가지고 있다</p>
+    </div>
+
+<h5><a href="#list1">TOP↑</a></h5>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+        div{width:900px;}
+
+        p{text-align: justify;}
+
+    </style>
+</head>
+<body>
+    <div>
+    <h2>예스24  리스트</h2> 
+    <h3>제목 : 투명한 나선</h3>
+    <hr>
+    <ul>
+            <li><a href="#list1">책 소개</a></li>
+            <li><a href="#list2">이미지</a></li>
+            <li><a href="#list3">작가정보</a></li>
+        </ul>
+    <h4 id="list1">책 소개</h4>
+    <p>유카와의 비밀이 처음 밝혀지는 갈릴레오 시리즈 최신작 “굳이 말하자면 지금 하는 일은 속죄야.”</p><br><br>
+‘오늘의 일본을 대표하는 작가’, ‘동아시아에서 가장 사랑받는 미스터리 작가’, ‘한국인이 제일 좋아하는 일본 장르소설 작가’ 히가시노 게이고의 장편소설 『투명한 나선』이 종합 출판 브랜드 북다에서 출간되었다. 1985년 『방과 후』로 데뷔한 히가시노 게이고는 『비밀』을 시작으로 『용의자 X의 헌신』, 『백야행』, 『나미야 잡화점의 기적』, 『녹나무의 파수꾼』, 『가공범』 등 수많은 베스트셀러를 발표하며 누구도 넘볼 수 없는 위상을 정립했다. 40여 년 동안 100권이 넘는 작품을 발표한 작가는 본격 미스터리는 물론 휴먼, SF, 스릴러, 사회파 미스터리 등 장르를 가리지 않고 왕성하게 활동 중이다. 그의 작품들은 각종 영화, 드라마, 게임 등으로 만들어졌고, 우리나라에서도 『백야행』과 『용의자 X의 헌신』, 『방황하는 칼날』이 영화화되었다. 그중 ‘갈릴레오’는 화제성, 완성도, 판매량 모두에서 작가의 대표 시리즈라 칭할 만하다.
+1996년 일본에서 처음 연재되어 2026년 30주년을 맞이한 이 시리즈의 열 번째 작품인 『투명한 나선』은 2021년 일본 출간 즉시 토한 종합 1위를 비롯하여 각종 서점 베스트셀러 랭킹되며 여전한 인기를 증명했다. 그동안 베일에 싸여 있던 주인공 유카와 마나부의 비밀이 처음 밝혀지는 『투명한 나선』은 갈릴레오 시리즈의 새로운 전환점이 되는 작품이다.
+『투명한 나선』은 전작들의 구성과 장점은 그대로 가져가면서도 유카와의 과거와 비밀을 공개함으로써 유카와 마나부의 인간적인 면모를 깊이 있게 그려 냈다. 작중 유카와의 대사인 “자네는 나에 대해 아무것도 몰라”는 작가가 독자에게 하고 싶었던 말인지도 모른다. 이 작품을 우리말로 옮긴 김선영 역자는 “우리가 그동안 보아 왔던 것은 어쩌면 천재 물리학자의 기나긴 사춘기 시절이었을지도 모른다”라며 『투명한 나선』은 “인간 ‘유카와 마나부’를 마침내 발견해 낸 작품”으로서 독보적인 존재감을 갖는다고 전했다. 긴 세월 뚝심 있게 자신의 관점과 논리를 견지해 온 유카와 마나부. 이 책으로 그에 대한 독자들의 사랑은 몇 겹 더 두터워지리라 확신한다.
+
+    <h5 id="list2">이미지</h5>
+    <p><img src="images/b3.jpg" alt="투명한 나선"></p>
+    <h6 id="list3">작가정보</h6>
+    <p>일본 최고의 베스트셀러 작가. 1958년 오사카 출생. 오사카 부립 대학 졸업 후 엔지니어로 일했다. 1985년 《방과 후》로 제31회 에도가와란포상을 수상하면서 작가로 데뷔하였다. 1999년 《비밀》로 제52회 일본추리작가협회상, 2006년 《용의자 X의 헌신》으로 제134회 나오키상과 제6회 본격미스터리대상 소설부문상, 2012년 《나미야 잡화점의 기적》으로 제7회 중앙공론문예상, 2013년 《몽환화》로 제26회 시바타렌자부로상, 2014년 《기도의 막이 내릴 때》로 제48회 요시카와에이지 문학상을 수상했다. 주요 작품으로는 《동급생》 《라플라스의 마녀》 《가면산장 살인사건》 《몽환화》 《위험한 비너스》 《눈보라 체이스》 《연애의 행방》 《녹나무의 파수꾼》 《숙명》 등이 있으며, 그 외에도 동화 《마더 크리스마스》, 에세이 《히가시노 게이고의 무한도전》을 출간하였다. 2026년 7월 23일 향년 68세 대장암으로 별세하였다.</p>
+    </div>
+    <h7><a href="#list1">TOP↑</a></h7>
+
+</body>
+</html>
+
+
+
+margin: 50px auto;
+위 아래는 50만큼 띄고 좌우는 자동으로 라는 의미 
+
+img src="이미지파일" usemap"파일이름" 
+이미지를 그림판으로 불러와서 좌표값을 찾아 coords (위치값)에 넣고 링크 걸어 놓으면 그 이미지를 클릭하면 그 이미지에 맞는 링크로 이동 
+    <map name="ent">
+        <!-- 사각형 : rect -->
+        <area shape="rect" coords="45,480,160,380" href="https://www.apple.com/kr/ipad/" target="_blank">   
+        <area shape="rect" coords="175,480,290,340" href="https://www.apple.com/kr/watch/" target="_blank"> 
+        <area shape="rect" coords="301,440,380,320" href="https://www.apple.com/kr/airpods/" target="_blank">
+        <area shape="rect" coords="430,442,505,320" href="https://www.nespresso.com/pro/kr/ko" target="_blank"> 
+        <!-- 원형 : circle-->
+        <area shape="circle" coords="120,100,50" href="https://www.samsung.com/sec/event/triple-buy/" target="_blank">     
+        <!-- 다각형 : poly-->
+        <area shape="poly" coords="385,60,470,60,520,150,320,150" href="https://www.naver.com/" target="_blank">     
+    </map>
+
+사각형 모양은 아래 왼쪽 부분 좌표값(2개), 오른쪽 위쪽 부분 좌표값 (2개)필요
+원형 모양은 중앙부분의 좌표값(2개), 반지름 좌표 1개만 필요 (120, 100 이 중앙 좌표였고 끝부분 좌표가 170이라면 50로 마지막 좌표를 입력하면 됨)
+다각형 모양은 모든 부분의 좌표 4개가 필요함 같은 방향으로 좌표 확인해야함 
+
+
+from 폼 기능에는 글자쓸 때 label로 쓴다. 다른 것 쓰면 연동이 안 됨
+
+화면에 노출되는 방식은 get 방식 
+화면에 노출되지 않는 방싱은 post 방식 (숨겨서 정보를 보내는 방식) 
+
+ <input type="password" value="로그인"> 패스워드가 별표로 나옴 (숨기는 기능)
+
+<label for="id"> 
+<input id="id" > 
+label과 input 이 연결된다는 의미 
+
+maxlength="3" 입력자리 3자리 의미 
+
+
+input{width: 100px; height: 50px;}
+#id{width: 200px; height: 40px;}
+특정부분만 사이즈 조정하고 싶을때 style 내에서 입력해 처리한다 
+
+value="abc" 값을 변경되지 않고 나타남. 수정할 때 필요한 기능 
+value="abc" readonly 읽기만 한다는 의미 (허나 로그인 페이지에서 f12를 눌러 확인하는 공간에서 readonly를 빼면 수정 가능)
+
+ input type="search" 한꺼번에 지울 수 있는 기능 
+
+라디오박스 한개만 체크 가능한거 
+체크박스 모두 체크가 가능한거 
+
+<button type="button">우편번호검색</button> 무조건 button을 입력해야함, 안 그러면 submit 으로 처리 
+
+체크박스만 리스트로 전송
+나머진 문자열로 전송 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- get: 읽기, post: 쓰기, put:수정, deletd:삭제 html에서는 get, post 방식만 사용 파이썬 연결시에는 4가지 모두 사용 -->
+    <form name="frm" action="p0910_05.html" method="get">
+        <label>검색</label>
+        <input type="search" name="sh"><br>
+        <input type="email" name="email" required><br>
+        <input type="url" name="u"><br>
+        <label>아이디</label>
+        <input type="text" name="id"><br>
+        <input type="submit" value="전송"> 
+
+
+
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        #address{width: 400opx;}
+
+
+    </style>
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function postBtn(){
+            alert("다음주소로 우편번호 검색을 시작합니다."); 
+
+        new kakao.Postcode({
+        oncomplete: function(data) {
+            console.log("우편번호: ", data.zonecode);
+            console.log("주소: ", data.address);
+            document.getElementById("zipcode").value = data.zonecode;
+            document.getElementById("address").value = data.address;
+
+        }
+    }).open();
+    
+            
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <form name="frm" action="p0910_05.html" method="get">
+        <label>아이디</label>
+        <input type="text" name="id" id="id" ><br>
+        <label>패스워드</label>
+        <input type="password" name="pw" id="pw"><br>
+        <label>이름</label>
+        <input type="text" name="name" id="name"><br>
+        <label>주소</label><br>
+        <label>우편번호</label>
+        <input type="text" name="zipcode" id="zipcode">
+        <button type="button" onclick="postBtn()">우편번호검색</button><br>
+        <label>상세주소</label>
+        <input type="text" name="address" id="address"><br>
+        <label>성별</label><br>
+        <input type="radio" name="gender" id="man" value="남자">
+        <label for="man">남자</label>
+        <input type="radio" name="gender" id="woman" value="여자">
+        <label for="woman">여자</label>
+        <br>
+        <label>취미</label><br>
+        <input type="checkbox" name="hobby" id="game" value="게임">
+        <label for="game">게임</label>
+        <input type="checkbox" name="hobby" id="golf" value="골프">
+        <label for="golf">골프</label>
+        <input type="checkbox" name="hobby" id="swim" value="수영">
+        <label for="swim">수영</label>
+        <input type="checkbox" name="hobby" id="run" value="조깅">
+        <label for="run">조깅</label>
+        <input type="checkbox" name="hobby" id="book" value="독서">
+        <label for="book">독서</label>
+        <br>
+
+
+        <input type="submit" value="전송">
+
+    </form>
+
+</body>
+</html>
+
+
