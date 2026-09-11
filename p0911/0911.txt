@@ -1,0 +1,306 @@
+json 이 xml 보다 용량이 조금 작다. 요즘은 json을 많이 사용.
+호환되는 포맷이 많음. 
+
+파이썬은 json을 파악하지 못하기에 딕셔너리 형태로 변환해서 처리를 함
+json 데이터 전송 방식 
+파이썬 / 자바 / C 등등 서로 데이터를 전송할 때 json으로 전송하여 각각의 프로그램에서 처리 
+
+<script> 는 맨 위쪽이나 맨 아래쪽에 입력하는 것이 표준이다. 
+
+required 입력을 꼭 해야만 처리진행이 가능 
+
+수정할 수 있는 기능이지만, 두 가지의 차이점 
+disabled 아에 전송 불가 
+readonly 전송은 가능 
+
+style 의 다른 말 css 
+CSS(Cascading Style Sheets)는 웹페이지의 뼈대를 이루는 HTML 문서의 색상, 글꼴, 레이아웃 등 디자인과 시각적 요소를 꾸미는 스타일 시트 언어입니다
+csss 는 맨 위에서부터 확인하고 처리하기에 무조건 맨 위에 입력하는 것이 좋다.
+전체 선택 * (별표) 
+
+태그 : 해당되는 태그 모두 지정할 때 
+아이디 : 1개만 지정할 때 가장 강력함 (# 삽으로 지정)
+클래스 : 여러 개를 지정할때 (. 점으로 지정) 
+
+아이디 > 클래스 > 태그 이런 식으로 처리 
+
+!important 우선 적용하라는 의미 
+표준이 안 된 것들은 무조건 접두사를 입력해야함 
+
+rgb
+rgva (a는 투명)
+
+<ul> 
+list-style-image : url("image/dot.png) 이런 식으로 넣을 수도 있음 
+</ul>
+
+bordor box  보더 박스 기준으로 색칠을 함 
+padding box 글자 안쪽 기준으로 색칠을 함 
+content-box : 글자를 기준으로 색칠을 함
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그</title>
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+        #address{width: 300px;}
+
+
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <!-- get, post, put, delete : api--> 
+    <form name="frm" action="result.html" method="get"> 
+    <label for="id">아이디</label>
+    <input type="text" name="id" id="id" required><br>
+    <label>패스워드</label>
+    <input type="password" name="pw" id="pw"><br>
+    <label>이름</label>
+    <input type="text" name="name" id="name" value="홍길동" disabled><br>
+    <label>주소</label><br>
+    <label>우편번호</label>
+    <input type="text" name="zipcode" id="zipcode" readonly>
+    <button type="button" onclick="postBtn()">우편번호 검색</button><br> 
+    <script>
+        function postBtn(){
+            // alert("버튼클릭"); 
+            // 다음주소 api 연결 
+            new kakao.Postcode({
+            oncomplete: function(data) {
+                document.getElementById("zipcode").value=data.zonecode
+                document.getElementById("address").value=data.address
+
+            }
+        }).open();
+        }
+    </script>
+    <input type="text" name="address" id="address" placeholder="상세주소가 들어갑니다"> 
+    <br>
+    <label>성별</label><br>
+    <input type="radio" name="gender" id="man" value="남자">
+    <label for="man">남자</label>
+    <input type="radio" name="gender" id="woman" value="여자">
+    <label for="woman">여자</label>
+    <br> 
+    <label>취미</label><br>
+    <input type="checkbox" name="hobby" id="game" value="게임">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id="golf" value="골프">
+    <label for="golf">골프</label>
+    <input type="checkbox" name="hobby" id="swim" value="수영">
+    <label for="swim">수영</label>
+    <input type="checkbox" name="hobby" id="run" value="조깅">
+    <label for="run">조깅</label>
+    <input type="checkbox" name="hobby" id="book" value="독서">
+    <label for="book">독서</label>
+    <br> 
+    <label>학과</label><br>
+    <select name="major">
+            <option value="컴퓨터공학과">컴퓨터공학과</option>
+            <option value="국문학과">국문학과</option>
+            <option value="영문학과">영문학과</option>
+        </select>
+        <br>
+        <input type="file" name="afile"><br>
+        <input type="submit" value="input완료">
+        <br>
+        <button type="button" onclick="confirmBtn()">버튼완료</button>
+    <script>
+            function confirmBtn(){
+                //alert("완료버튼클릭");
+                if (document.getElementById("id").value==""){
+                    alert("아이디를 입력하셔야 합니다.");
+                    document.getElementById("id").focus();
+                    return;
+                }
+                frm.submit();
+
+    </script>
+
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--외부스타일시트 : 링크에서 불러와서 실행하는 것-->
+    <link href="css/style1.css" rel="stylesheet" type="text/css">
+    <title>스타일</title>
+</head>
+<body>
+    <div id="top"></div>
+    <div id="nav">
+        <ul>
+            <li>COOKIT소개</li>
+            <li>COOKIT메뉴</li>
+            <li>리뷰</li>
+            <li>이벤트</li>
+            <li>MY쿡킷</li>
+
+
+        </ul>
+    </div>
+    <div id="banner">
+        <img src="images/main_top.jpg">
+
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width:100%;}
+        h2{color:gray; font-size: 40px; text-align: center;}
+        ul{list-style: square; color:blue; font-size: 20px;}
+        #tit1{font-size: 50px;}
+    </style>
+</head>
+<body>
+    <img src="images/Sydney.jpg">
+    <h2>세계 3대 미항</h2>
+    <ul>
+        <li id="tit1">시드니, 호주</li>
+        <li>리우데자네이루, 브라질</li>
+        <li>나폴리, 이탈리아</li>
+    </ul>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{font-size: 30px; color: yellow;} /* 태그 : 해당되는 태그 모두 지정할 때 */ 
+        #f1{color: red;} /* 아이디 : 1개만 지정할 때 가장 강력함 */ 
+        .v{color: green;} /* 클래스 : 여러 개를 지정할때 */
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <h2>야채과일가게</h2>
+        <li class="v" ff a ap id="f1" class="v">사과</li> /* 여러 개 지정은 가능 */
+        <li class="v">오이</li>
+        <li>배</li>
+        <li class="v">상추</li>
+        <li>수박</li>
+        <li class="v">감자</li>
+    </ul>
+
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+        h2{.black-han-sans-regular {
+            font-size: 50px;
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal; }}
+
+        p{  
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    </style>
+        
+</head>
+<body>
+    <h2>따끈한 소울푸드</h2>
+    <p>황태콩나물 해장국 먹으로 오세요</p>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Hi+Melody&display=swap');
+        *{margin:0; padding:0;}
+        #top{width:100%; height:35px; background: #202020;}
+        #nav{width:100%; height:82px; border-bottom:1px solid #202020; }
+        #banner{ color:white;
+            width:100%; height:640px;
+            background: url(images/main_top.jpg) no-repeat;
+            box-sizing: border-box; 
+        }
+        #b_txt{padding-left:200px; padding-top:200px;}
+        #b_txt>p{font-size: 28px; border-bottom:2px solid white;
+            width:230px; margin-bottom:15px; color: blue;         
+        }
+        h2{font-size:82px; margin-bottom:5px; }
+        h2{
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #addbff;
+            text-decoration-line: underline;
+            text-shadow: 1px 1px 100px #000;
+        }
+        h3{font-size:52px; margin-bottom:5px;}
+        h3{
+            font-family: "East Sea Dokdo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }        
+       
+        p{font-size:70px; margin-bottom:5px;}
+        p{            
+            font-family: "Hi Melody", sans-serif;
+            font-weight: 400;
+            font-style: normal; 
+
+        }
+        h4{line-height: 20px;}
+
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <div id="nav"></div>
+    <div id="banner">
+        <div id="b_txt">
+            <p>9/11 신메뉴 출시</p>
+            <h2>따끈한 소울푸트</h2>
+            <h3>황태콩나물 해장국</h3>
+            <h4>호르무즈 이어 홍해까지 장악되나···후티, 홍해 연안의 주요 도시 모카 접수</h4>
+
+        </div>
+    </div>
+</body>
+</html>
+
+
