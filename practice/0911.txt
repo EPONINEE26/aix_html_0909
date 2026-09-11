@@ -1,0 +1,120 @@
+json 이 xml 보다 용량이 조금 작다. 요즘은 json을 많이 사용.
+호환되는 포맷이 많음. 
+
+파이썬은 json을 파악하지 못하기에 딕셔너리 형태로 변환해서 처리를 함
+json 데이터 전송 방식 
+파이썬 / 자바 / C 등등 서로 데이터를 전송할 때 json으로 전송하여 각각의 프로그램에서 처리 
+
+<script> 는 맨 위쪽이나 맨 아래쪽에 입력하는 것이 표준이다. 
+
+required 입력을 꼭 해야만 처리진행이 가능 
+
+수정할 수 있는 기능이지만, 두 가지의 차이점 
+disabled 아에 전송 불가 
+readonly 전송은 가능 
+
+style 의 다른 말 css 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그</title>
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+        #address{width: 300px;}
+
+
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <!-- get, post, put, delete : api--> 
+    <form name="frm" action="result.html" method="get"> 
+    <label for="id">아이디</label>
+    <input type="text" name="id" id="id"><br>
+    <label>패스워드</label>
+    <input type="password" name="pw" id="pw"><br>
+    <label>이름</label>
+    <input type="text" name="name" id="name"><br>
+    <label>주소</label><br>
+    <label>우편번호</label>
+    <input type="text" name="zipcode" id="zipcode">
+    <button type="button" onclick="postBtn()">우편번호 검색</button><br> 
+    <script>
+        function postBtn(){
+            // alert("버튼클릭"); 
+            // 다음주소 api 연결 
+            new kakao.Postcode({
+            oncomplete: function(data) {
+                document.getElementById("zipcode").value=data.zonecode
+                document.getElementById("address").value=data.address
+
+            }
+        }).open();
+        }
+    </script>
+    <input type="text" name="address" id="address" placeholder="상세주소가 들어갑니다"> 
+    <br>
+    <label>성별</label><br>
+    <input type="radio" name="gender" id="man" value="남자">
+    <label for="man">남자</label>
+    <input type="radio" name="gender" id="woman" value="여자">
+    <label for="woman">여자</label>
+    <br> 
+    <label>취미</label><br>
+    <input type="checkbox" name="hobby" id="game" value="게임">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id="golf" value="골프">
+    <label for="golf">골프</label>
+    <input type="checkbox" name="hobby" id="swim" value="수영">
+    <label for="swim">수영</label>
+    <input type="checkbox" name="hobby" id="run" value="조깅">
+    <label for="run">조깅</label>
+    <input type="checkbox" name="hobby" id="book" value="독서">
+    <label for="book">독서</label>
+    <br> 
+    <label>학과</label><br>
+    <select name="major">
+        <option value="컴퓨터공학과">컴퓨터공학과</option>
+        <option value="영문학과">영문학과</option>
+        <option value="국문학과">국문학과</option>
+        <br>
+        <input type="submit" value="완료">
+        <br>
+        <button type="button">버튼완료</button>
+
+
+    </select>
+
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 축하드립니다,</title>
+    <style>
+        div{width: 544px; margin: 50px auto;}
+
+
+
+    </style>
+</head>
+<body>
+    <a href="p0911_01.html">
+        <div>
+        <img src="images/member.png"> 
+        
+        </div>
+    </a>
+
+</body>
+</html>
+
