@@ -1,0 +1,610 @@
+https://fontawesome.com/v6/search?p=2&ic=free-collection 
+https://mizykk.tistory.com/2
+https://fonts.google.com/
+
+이탤릭체 쓰는 이유는 강조
+em i 
+strong
+모두 강조의 기증 
+
+shadow 
+- 로 지정을 하면 위쪽으로 그림자 생성 
+
+text - indent 속성은 들여쓰기 
+margin: 0 auto; 이미지 중앙 정렬  auto 는 양쪽 1/2만큼 정렬
+
+contain : 한 방향으로 이미지 모두 다 보여줌 
+cover : 전체 커버 
+
+background-position: 이미지 위치 변경 
+image, repeat, attachment, postion  background 한 줄에 다 같이 쓸수 있음 */ 
+background: url('images/back1.jpg') no-repeat fixed 30px 200px; 
+
+background-size
+background-clip
+background-origin 
+이건 따로 써야함 
+
+background: linear-gradient 최신 버전에서는 어느 정도 기준이 생겼기에 접두사 안 붙여도 됨 
+background: linear-gradient(90deg, blue, white); 각도 90도 
+background: linear-gradient(to right bottom, blue, white); 방향 오른쪽 
+
+background: radial-gradient (원형 그라데이션) 
+
+ul{display: flex;} 옆으로 출력되게 함 사각형 정렬 (블럭박스를 정렬할 때 사용) 
+
+공간이 없을 경우 마지막 칸은 밑으로 떨어짐 
+
+space - between
+flex start 
+
+.c1{width: 588px; height: 536px; border: 1px solid black;}
+
+span은 너비 높이를 바꾸어도 적용이 안 됨 
+display:block ; 밑으로 출력되게 함 
+display:inline-block ; 인라인이면서도 블록 기능
+
+display:nome 요소를 숨기고 싶을 때 사용, 사이즈를 줄여서 볼 때 항목이나 요소를 숨길 때 사용 
+
+inline 은 너비 높이 지정 불가 옆으로 출력 
+block 너비 높이 지정 가능 밑으로 출력 
+inline-block 인라인이면서 블록요서 기능 
+
+iframe 웹 문서 안에 다른 문서 삽입  새로운 페이지를 넣을 때 사용. 사이트 내 사이트 삽입 
+대부분의 기업들은 연결을 거부하고 있음 (범죄에 연결이 될 수 있을 수 있기에) 
+
+H.264/AVC 영상 관련 사용시 (무조건)
+control 재생버튼 생성
+auto muted 자동 재생 
+loop 무한 반복 
+
+
+<h1>유부녀 킬러 (A Bona fide Killer)</h1>
+제일 밑에 있는 것이 제일 위에 있는 것임 
+
+div{width: 100%; height: 600px; overflow: hidden; position: relative;}
+부모에도 포지션을 지정해야함 
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+        div{text-align: center;}
+        h2{ font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h3{ font-family: "Dongle", sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            font-style: normal;
+            }   
+
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>글꼴 관련 스타일</h2>
+        <h3>웹폰트 : 웹 문서안에 글꼴 정보 저장</h3> 
+    </div>
+
+
+    
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@font-face {
+    font-family: 'Daeojamjil';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+    h2 {font-family: 'Daeojamjil';
+        font-weight: 900; font-display: swap; text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h2>한국어한글웹폰트 스타일</h2>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{width: 100%; height: 100%; background: #f5f6f7;}
+        #top{width: 230px; height: 44px; overflow: hidden;
+            margin: 62px auto 67px;      
+        }
+        #banner{width: 460px; margin: 0 auto;}
+                
+        input{width: 460px; height: 51px; border: 1px solid #dadada;
+            margin-bottom: 14px; background: #fff; font-size: 15px;
+            box-sizing: border-box; padding-left: 15px;
+
+        
+        }
+        button{width: 460px; height: 61px; margin-top: 15px;
+            font-size: 20px; font-weight: 700; color: white;
+            background: #03c75a; border: none; cursor: pointer;
+    
+        
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <a href="http://www.naver.com">
+                <img src="images/pc_sp_login_190522.png">              
+                
+            </a>
+
+        </div>
+        <div id="banner">
+            <form name="frm" action="#" method="post">
+                <input type="text" name="id" id="id" placeholder="아이디"><br>
+                <input type="password" name="pw" id="pw" placeholder="비밀번호"><br>
+                <button type="button">로그인</button>
+
+            </form>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{width: 100%; height: 100%; background: #f5f6f7;}
+        #top{width: 230px; height: 44px; overflow: hidden; 
+            margin: 62px auto 67px; 
+        }
+        #banner{width: 460px; margin: 0 auto;}
+
+        input{width: 460px; height: 51px; border: 1px solid #dadada;
+            background: #fff; margin-bottom: 14px; font-size: 15px;
+            box-sizing: border-box; padding-left: 15px;      
+        
+        }
+        button{width: 460px; height: 61px; margin-top: 15px; 
+            font-size: 20px; font-weight: 700; color: white;
+            background: #03c75a; border: none; 
+            cursor: pointer;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <a href="http://www.naver.com">
+                <img src="images/pc_sp_login_190522.png">
+
+            </a>
+        </div>
+        <div id="banner">
+            <form name="frm" action="#" method="post">
+                <input type="text" name="id" id="id" placeholder="아이디"><br>
+                <input type="password" name="pw" id="pw" placeholder="비밀번호"><br>
+                <button type="button">로그인</button>
+
+            </form>
+
+        </div>
+
+    </div>   
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 1600px; height: 600px;
+            border: 1px solid black; 
+            background: url('images/a1.jpg') no-repeat; 
+            background-clip: border-box;
+            background-size: 140%;
+            background-position: -220px -550px;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        
+    </div>
+
+
+    
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 그라데이션 */ 
+        div{width: 400px; height: 400px; border: 2px solid black;
+            background: blue; 
+            background: linear-gradient(90deg, blue, white); 
+        }
+        /** bqckground 내용 
+        div{
+            width: 600px; height: 3000px; border: 1px solid black;
+            image, repeat, attachment, postion  background 한 줄에 다 같이 쓸수 있음 
+            background: url('images/back1.jpg') no-repeat fixed 30px 200px;                   
+        }
+         */
+
+    </style>
+</head>
+<body>
+    <div>
+
+
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        * {margin:0; padding:0; letter-spacing: -1px; color:#111;
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        }
+        #main{width:100%; height:733px;
+        background: #f5ead4;  padding-top:75px;
+        box-sizing: border-box; /*크기가 변동없도록*/
+        }
+        #banner{width:1200px; height:536px; margin:0 auto;
+        display: flex; justify-content: space-between;         }
+        #left{width:588px; height:536px; }
+        #right{width:558px; height:536px;  }
+        h4{width:138px; height:26px; font-size: 15px; font-weight: 700;
+        border-bottom:3px solid #111;
+        margin:18px 0 17px 0; }
+        h3{font-size:30px; font-weight: 600; margin-bottom:25px; }
+        p{ color:#666; line-height:1.5; margin-bottom:35px;  }
+        .r_list{width:383px; height:102px; margin-bottom:20px; display: flex;}
+        .r_list img{width:102px; height:102px; }
+        .r_li{margin-left: 20px;}
+        .r_li h5{font-size: 15px; font-weight: 600; margin-top: 7px;} 
+        .r_li span{font-size: 14px; color: #666; margin-top: 10px;}
+        .r_li h6{font-size: 15px; font-weight: 700; margin-top: 10px;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="banner">
+            <div id="left" >
+                <img src="images/left1.jpg">
+            </div>
+            <div id="right" >
+                <h4>2026-09 : 월간 여행지</h4>
+                <h3>일본 소도시 이야기</h3>
+                <p>우동 왕국이라는 수식어가 어울리는 다카마츠<br>
+                구름을 뚫고 솟은 후지산과 그윽한 녹차향이 머무는 곳, 시즈오카<br>
+                이색적인 풍경이 펼쳐지는 곳, 요나고<br><br>
+                후지산과 예술 섬 그리고 녹차와 우동<br>
+                색다른 일본을 원하는 당신에게 추천합니다
+                </p>
+                <div class="r_list">
+                    <div>
+                        <img src="images/right1.png">
+                    </div>
+                    <div class="r_li">
+                        <h5>마쓰야마 자유여행 3일 #칸데오 호텔 마쓰야마</h5>
+                        <span>#마쓰야마 중심가 위치 #대욕장즐기기</span>
+                        <h6>539,900원</h6>
+                    </div>
+                </div> 
+                <div class="r_list">
+                    <div>
+                        <img src="images/right2.jpg">
+                    </div>
+                    <div class="r_li">
+                        <h5>다카마츠 3,4일 #1일자유 #시누키우동 즐기기</h5>
+                        <span>#예술의섬, 나오시마포함 or 선택 #우동맛집</span>
+                        <h6>669,900원</h6>
+                </div>                   
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 300px; height: 200px; border: 1px solid black;
+            
+
+        }
+        span{width: 300px; height: 200px; border: 10px solid pink;
+            padding: 30px; box-sizing: border-box;
+
+        
+        
+    </style>
+</head>
+<body>
+    <div>1</div>
+
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 300px; height: 200px; border: 17px solid black;
+            padding: 30px; box-sizing: border-box; border-radius: 50px;} 
+
+        #login{width: 120px; height: 40px; background: #efefef; border: 3px solid b;}
+    </style>
+</head>
+<body>
+    <div id="login">로그인</div>
+    <div>1</div>
+
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 300px; height: 300px; border: 17px solid black;
+            border-radius: 20px; border-radius: 150px;} 
+
+        #login{width: 120px; height: 40px; background: #efefef; }
+    </style>
+</head>
+<body>
+    <div id="login">로그인</div>
+    <div>1</div>
+
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video src="images/hd1.mp4" controls autoplay muted loop></video>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; height: 700px; overflow: hidden;}
+        video{width:100%; }
+
+    </style>
+</head>
+<body>
+    <div> 
+        <video src="images/hd1.mp4" autoplay muted loop></video>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; height: 800px; overflow: hidden;}
+        video{width: 100%;}
+
+
+    </style>
+</head>
+<body>
+    <!-- 시멘틱태그 header, nav, section, article, aside, footer ,address -->
+    <section> 
+    <video src="images/killer1.mp4" muted autoplay loop> </video>
+    <h1>유부녀 킬러 (A Bona fide Killer)</h1>
+    </section>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; position: relative;}
+        video{position: relative; z-index: 1;}
+        h1{position: absolute; z-index: 10; left: 200px; height: 400px; font-size: 70px;}
+
+    </style>
+</head>
+<body>
+    <!-- 시멘틱태그 header, nav, section, article, aside, footer ,address -->
+    <div> 
+    <video src="images/killer1.mp4" muted autoplay loop></video>
+    <h1>유부녀 킬러 (A Bona fide Killer)</h1>
+    </div> 
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; position: relative;}
+        
+        h1{position: absolute; z-index: 10; left: 340px; top: 400px; font-size: 70px; color: white;}
+
+    </style>
+</head>
+<body>
+    <!-- 시멘틱태그 header, nav, section, article, aside, footer ,address -->
+    <div> 
+    <video src="images/killer1.mp4" muted autoplay loop></video>
+    <h1>유부녀 킬러 (A Bona fide Killer)</h1>
+    </div> 
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; height: 600px; overflow: hidden; position: relative;}
+        
+        h1{position: absolute; z-index: 10; left: 350px; top: 250px; font-size: 70px; color: white;}
+
+    </style>
+</head>
+<body>
+    <!-- 시멘틱태그 header, nav, section, article, aside, footer ,address -->
+    <div> 
+    <video src="images/killer1.mp4" muted autoplay loop></video>
+    <h1>유부녀 킬러 (A Bona fide Killer)</h1>
+    </div> 
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; height: 600px; overflow: hidden; position: relative;}
+        
+        h1{position: absolute; z-index: 10; left: 350px; top: 250px; font-size: 70px; color: white;}
+        h2{position: absolute; z-index: 10; left: 350px; top: 340px; font-size: 30px; color: white;}
+
+    </style>
+</head>
+<body>
+    <!-- 시멘틱태그 header, nav, section, article, aside, footer ,address -->
+    <div> 
+    <video src="images/killer1.mp4" muted autoplay loop></video>
+    <h1>유부녀 킬러 (A Bona fide Killer)</h1>
+    <h2>OST Part 1 > 이하이 (LEEHI) - Paper Flower MV</h2>
+    </div> 
+</body>
+</html>
