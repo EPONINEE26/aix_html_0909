@@ -50,6 +50,14 @@ inline 은 너비 높이 지정 불가 옆으로 출력
 block 너비 높이 지정 가능 밑으로 출력 
 inline-block 인라인이면서 블록요서 기능 
 
+iframe 웹 문서 안에 다른 문서 삽입  새로운 페이지를 넣을 때 사용. 사이트 내 사이트 삽입 
+대부분의 기업들은 연결을 거부하고 있음 (범죄에 연결이 될 수 있을 수 있기에) 
+
+H.264/AVC 영상 관련 사용시 (무조건)
+control 재생버튼 생성
+auto muted 자동 재생 
+loop 무한 반복 
+
 
 
 
@@ -394,5 +402,85 @@ inline-block 인라인이면서 블록요서 기능
     
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 300px; height: 200px; border: 17px solid black;
+            padding: 30px; box-sizing: border-box; border-radius: 50px;} 
+
+        #login{width: 120px; height: 40px; background: #efefef; border: 3px solid b;}
+    </style>
+</head>
+<body>
+    <div id="login">로그인</div>
+    <div>1</div>
+
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 300px; height: 300px; border: 17px solid black;
+            border-radius: 20px; border-radius: 150px;} 
+
+        #login{width: 120px; height: 40px; background: #efefef; }
+    </style>
+</head>
+<body>
+    <div id="login">로그인</div>
+    <div>1</div>
+
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video src="images/hd1.mp4" controls autoplay muted loop></video>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; height: 700px; overflow: hidden;}
+        video{width:100%; }
+
+    </style>
+</head>
+<body>
+    <div> 
+        <video src="images/hd1.mp4" autoplay muted loop></video>
+    </div>
+</body>
+</html>
+
 
 
