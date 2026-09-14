@@ -1,0 +1,236 @@
+https://fontawesome.com/v6/search?p=2&ic=free-collection 
+https://mizykk.tistory.com/2
+https://fonts.google.com/
+
+이탤릭체 쓰는 이유는 강조
+em i 
+strong
+모두 강조의 기증 
+
+shadow 
+- 로 지정을 하면 위쪽으로 그림자 생성 
+
+text - indent 속성은 들여쓰기 
+margin: 0 auto; 이미지 중앙 정렬  auto 는 양쪽 1/2만큼 정렬
+
+contain : 한 방향으로 이미지 모두 다 보여줌 
+cover : 전체 커버 
+
+background-position: 이미지 위치 변경 
+image, repeat, attachment, postion  background 한 줄에 다 같이 쓸수 있음 */ 
+background: url('images/back1.jpg') no-repeat fixed 30px 200px; 
+
+background-size
+background-clip
+background-origin 
+이건 따로 써야함 
+
+background: linear-gradient 최신 버전에서는 어느 정도 기준이 생겼기에 접두사 안 붙여도 됨 
+background: linear-gradient(90deg, blue, white); 각도 90도 
+background: linear-gradient(to right bottom, blue, white); 방향 오른쪽 
+
+background: radial-gradient (원형 그라데이션) 
+
+ul{display: flex;} 옆으로 출력되게 함 사각형 정렬 (블럭박스를 정렬할 때 사용) 
+
+공간이 없을 경우 마지막 칸은 밑으로 떨어짐 
+
+space - between
+flex start 
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100..900&display=swap');
+        div{text-align: center;}
+        h2{ font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h3{ font-family: "Dongle", sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            font-style: normal;
+            }   
+
+
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>글꼴 관련 스타일</h2>
+        <h3>웹폰트 : 웹 문서안에 글꼴 정보 저장</h3> 
+    </div>
+
+
+    
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@font-face {
+    font-family: 'Daeojamjil';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+    h2 {font-family: 'Daeojamjil';
+        font-weight: 900; font-display: swap; text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h2>한국어한글웹폰트 스타일</h2>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{width: 100%; height: 100%; background: #f5f6f7;}
+        #top{width: 230px; height: 44px; overflow: hidden;
+            margin: 62px auto 67px;      
+        }
+        #banner{width: 460px; margin: 0 auto;}
+                
+        input{width: 460px; height: 51px; border: 1px solid #dadada;
+            margin-bottom: 14px; background: #fff; font-size: 15px;
+            box-sizing: border-box; padding-left: 15px;
+
+        
+        }
+        button{width: 460px; height: 61px; margin-top: 15px;
+            font-size: 20px; font-weight: 700; color: white;
+            background: #03c75a; border: none; cursor: pointer;
+    
+        
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <a href="http://www.naver.com">
+                <img src="images/pc_sp_login_190522.png">              
+                
+            </a>
+
+        </div>
+        <div id="banner">
+            <form name="frm" action="#" method="post">
+                <input type="text" name="id" id="id" placeholder="아이디"><br>
+                <input type="password" name="pw" id="pw" placeholder="비밀번호"><br>
+                <button type="button">로그인</button>
+
+            </form>
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{width: 100%; height: 100%; background: #f5f6f7;}
+        #top{width: 230px; height: 44px; overflow: hidden; 
+            margin: 62px auto 67px; 
+        }
+        #banner{width: 460px; margin: 0 auto;}
+
+        input{width: 460px; height: 51px; border: 1px solid #dadada;
+            background: #fff; margin-bottom: 14px; font-size: 15px;
+            box-sizing: border-box; padding-left: 15px;      
+        
+        }
+        button{width: 460px; height: 61px; margin-top: 15px; 
+            font-size: 20px; font-weight: 700; color: white;
+            background: #03c75a; border: none; 
+            cursor: pointer;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="top">
+            <a href="http://www.naver.com">
+                <img src="images/pc_sp_login_190522.png">
+
+            </a>
+        </div>
+        <div id="banner">
+            <form name="frm" action="#" method="post">
+                <input type="text" name="id" id="id" placeholder="아이디"><br>
+                <input type="password" name="pw" id="pw" placeholder="비밀번호"><br>
+                <button type="button">로그인</button>
+
+            </form>
+
+        </div>
+
+    </div>   
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{display: flex;}
+        li{width: 200px; height: 40px; border: 1px solid black;
+            background: pink; list-style: none; 
+        
+        }
+
+
