@@ -1,3 +1,5 @@
+7번은 css 2 에 이미지 불러오는 부분 수정하여 처리하기 
+
 위치를 잡는다는 의미 포지셔닝
 border-box 박스 사이즈를 알아서 정렬해줌
 
@@ -24,6 +26,15 @@ column-width : 600px; 크기에 맞춰줌
 
 table 로 지정하여 실행할 때 virtical-align 로 글자를 정렬할 수 있음 
 
+section > p 라고 지정을 할 경우 section (부모) 에 해당되는 p (자식) 에만 적용만 
+section p 라고 지정을 할 경우 모두 p 부분에 적용 
+
+h1 + p 인접한 p에만 적용 (플러스)
+
+h1 ~ p 모든 형제 모두 (같은 칸에 있는 모든 p) 
+
+input[type='text'] {background: yellow;}
+속성은 대괄호로 지정 
 
 
 
@@ -620,4 +631,220 @@ table 로 지정하여 실행할 때 virtical-align 로 글자를 정렬할 수 
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>포레스트 리솜</title>
+
+</head>
+<body>
+    <div id="back">
+        <header>
+            <div class="top">
+                <a href="https://www.resom.co.kr/forest/blog/news_list.asp"><div class="logo"></div></a>
+                <div class="menu">
+                    <div class="sub_menu">
+                        <ul>
+                            <li>회원예약</li>
+                            <li>패키지 예약</li>
+                            <li>부대시설 예약</li>
+                            <li>회원가입</li>
+                            <li id="sub_menu_li">로그인</li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>포레스트</li>
+                            <li>스파</li>
+                            <li>객실</li>
+                            <li>특별한 경험</li>
+                            <li>부대시설</li>
+                            <li id="nav_li">브랜드소개</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- 배너이미지 넣기 -->
+        <div id="banner"></div>
+        <section>
+            <div class="nav_history">
+                <ul>
+                    <li>HOME</li>
+                    <li><i class="fa-solid fa-chevron-right"></i></i>
+                    <li>포레스트</li>
+                    <li><i class="fa-solid fa-chevron-right"></i></i>
+                    <li>뉴스</li>
+                </ul>
+            </div>
+            <div class="title">뉴스</div>
+            <div class="search">
+                <form name="searchFrm" action="#" method="get">
+                    <select name="gubun">
+                        <option value="제목">제목</option>
+                        <option value="내용">내용</option>
+                    </select>
+                    <input type="search" name="key" id="key">
+                    <button type="button">검색</button>
+                </form>
+                </div>
+                <div class="cont">
+                    <table>
+                        <colgroup>
+                            <col width="10%">
+                            <col width="*">
+                            <col width="10%">
+                            <col width="15%">
+                            <col width="10%">
+                        </colgroup>
+                        <tr>
+                            <th>번호</th>
+                            <th>제목</th>
+                            <th>작성자</th>
+                            <th>날짜</th>
+                            <th>조회수</th>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>조식 메뉴 개편 및 이용요금 변경 안내</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>유아용 웨건 '원더폴드(wonderfold)' 대여 서비스</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>[PB] 리솜 프리미엄 LA 갈비 세트 출시</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>[2025 사진공모전] 눈부시게 푸르른 날 수상작 발표</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>[포레스트]사우나 및 스파 전 시설 휴장 안내 (3.30 ~ 4.5)</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>[리솜리조트] CCM 인증 획득 안내</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>해브나인 스파 아쿠아슈즈 필수착용 안내 (25.11.01~)</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>제1회 호반 시그니처 메뉴 경진대회 개최</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>[2025 사진공모전] 눈부시게 푸르른 날</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>[PB] 어메니티(리프레젠트2) 리뉴얼 안내</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>익스프레스 체크아웃 서비스 오픈</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>안전한 먹거리 제공을 위해 한국식품안전관리인증원MOU체결</td>
+                            <td>포레스트</td>
+                            <td>2026-09-15</td>
+                            <td>100</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            </div>
+            <div class="page"></div>
+            <footer>
+
+                
+            </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='text'] {background: yellow;}
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="hobby" id="game" value="게임">
+    <label for="game">게임</label>
+    <input type="checkbox" name="hobby" id="golf" value="골프">
+    <label for="golf">골프</label>
+    <input type="checkbox" name="hobby" id="swim" value="수영">
+    <label for="swim">수영</label>
+    <br>
+    <button type="button" onclick="chkBtn()">확인</button>
+    <script>
+        function chkBtn() {
+            // alert("확인") 
+            var count = document.querySelectorAll('input[name="hobby"]:checked').length; 
+            alert("개수 : "+count)
+            
+        }
+    </script>
+    <br>
+    <hr>
+    
+
+
+
+
+
+    <input type="text"><br>
+    <input type="password"><br>
+    <input type="email"><br>
+    <input type="search"><br> 
+
+</body>
+</html>
 

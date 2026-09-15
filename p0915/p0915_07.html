@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css2"> 
+    <title>Forest Resort | News</title>
+
+
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="header-inner">
+
+            <a href="#" class="logo">
+                FOREST
+                <span>RESORT</span>
+            </a>
+
+            <nav class="gnb">
+                <a href="#">ABOUT</a>
+                <a href="#">ROOMS</a>
+                <a href="#">SPA</a>
+                <a href="#">DINING</a>
+                <a href="#">EXPERIENCE</a>
+                <a href="#">NEWS</a>
+            </nav>
+
+            <div class="header-right">
+                <a href="#">LOGIN</a>
+                <a href="#">RESERVATION</a>
+            </div>
+
+            <button class="mobile-menu" aria-label="메뉴">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO IMAGE
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-subtitle">
+                FOREST RESORT
+            </div>
+
+            <h1 class="hero-title">
+                NEWS
+            </h1>
+
+            <p class="hero-description">
+                자연 속에서 만나는 새로운 소식을 전해드립니다.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
+    <main class="content">
+
+        <div class="breadcrumb">
+            HOME
+            <span>›</span>
+            NEWS
+        </div>
+
+
+        <div class="section-title">
+
+            <small>FOREST RESORT</small>
+
+            <h2>NEWS</h2>
+
+            <p>
+                포레스트 리조트의 다양한 소식을 확인해보세요.
+            </p>
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="category">
+
+            <button class="active" data-category="전체">
+                전체
+            </button>
+
+            <button data-category="리조트">
+                리조트
+            </button>
+
+            <button data-category="스파">
+                스파
+            </button>
+
+            <button data-category="이벤트">
+                이벤트
+            </button>
+
+            <button data-category="안내">
+                이용안내
+            </button>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-area">
+
+            <form class="search-box" id="searchForm">
+
+                <select id="searchType">
+                    <option value="title">
+                        제목
+                    </option>
+
+                    <option value="category">
+                        카테고리
+                    </option>
+                </select>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="검색어를 입력해주세요."
+                >
+
+                <button type="submit">
+                    검색
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- NEWS TABLE -->
+
+        <table class="news-table">
+
+            <thead>
+
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>구분</th>
+                    <th>등록일</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="newsList">
+
+                <tr data-category="리조트">
+
+                    <td>16</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            조식 메뉴 개편 및 이용요금 변경 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            리조트
+                        </span>
+                    </td>
+
+                    <td>2026.09.08</td>
+
+                </tr>
+
+
+                <tr data-category="안내">
+
+                    <td>15</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            유아용 웨건 대여 서비스 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            이용안내
+                        </span>
+                    </td>
+
+                    <td>2026.08.10</td>
+
+                </tr>
+
+
+                <tr data-category="리조트">
+
+                    <td>14</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            프리미엄 LA 갈비 세트 출시 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            리조트
+                        </span>
+                    </td>
+
+                    <td>2026.01.15</td>
+
+                </tr>
+
+
+                <tr data-category="이벤트">
+
+                    <td>13</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            2026 사진공모전 수상작 발표
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            이벤트
+                        </span>
+                    </td>
+
+                    <td>2026.01.09</td>
+
+                </tr>
+
+
+                <tr data-category="스파">
+
+                    <td>12</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            사우나 및 스파 시설 휴장 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            스파
+                        </span>
+                    </td>
+
+                    <td>2026.01.02</td>
+
+                </tr>
+
+
+                <tr data-category="리조트">
+
+                    <td>11</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            고객 만족 서비스 품질 향상 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            리조트
+                        </span>
+                    </td>
+
+                    <td>2025.12.12</td>
+
+                </tr>
+
+
+                <tr data-category="스파">
+
+                    <td>10</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            스파 이용 시 아쿠아슈즈 착용 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            스파
+                        </span>
+                    </td>
+
+                    <td>2025.09.29</td>
+
+                </tr>
+
+
+                <tr data-category="이벤트">
+
+                    <td>9</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            제1회 시그니처 메뉴 경진대회 개최
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            이벤트
+                        </span>
+                    </td>
+
+                    <td>2025.06.12</td>
+
+                </tr>
+
+
+                <tr data-category="이벤트">
+
+                    <td>8</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            아름다운 숲 사진공모전 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            이벤트
+                        </span>
+                    </td>
+
+                    <td>2025.04.28</td>
+
+                </tr>
+
+
+                <tr data-category="안내">
+
+                    <td>7</td>
+
+                    <td>
+                        <a href="#" class="news-title">
+                            객실 어메니티 리뉴얼 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        <span class="news-category">
+                            이용안내
+                        </span>
+                    </td>
+
+                    <td>2025.01.17</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+            <a href="#" class="arrow">«</a>
+            <a href="#" class="arrow">‹</a>
+
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+
+            <a href="#" class="arrow">›</a>
+            <a href="#" class="arrow">»</a>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-top">
+
+                <div class="footer-logo">
+                    FOREST RESORT
+                </div>
+
+                <div class="footer-menu">
+                    <a href="#">회사소개</a>
+                    <a href="#">오시는 길</a>
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">이용약관</a>
+                    <a href="#">고객센터</a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                충청북도 제천시 백운면 숲길 365<br>
+
+                대표번호 : 043-000-0000
+                &nbsp;&nbsp;
+                예약문의 : 1600-0000
+                &nbsp;&nbsp;
+                고객센터 : 02-0000-0000
+
+            </div>
+
+            <div class="copyright">
+                COPYRIGHT © FOREST RESORT. ALL RIGHTS RESERVED.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const categoryButtons =
+            document.querySelectorAll(".category button");
+
+        const newsRows =
+            document.querySelectorAll("#newsList tr");
+
+        const searchForm =
+            document.getElementById("searchForm");
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+
+        /*
+         * 카테고리 필터
+         */
+
+        categoryButtons.forEach(button => {
+
+            button.addEventListener("click", function() {
+
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+                const category =
+                    this.dataset.category;
+
+                newsRows.forEach(row => {
+
+                    if (
+                        category === "전체" ||
+                        row.dataset.category === category
+                    ) {
+
+                        row.style.display = "";
+
+                    } else {
+
+                        row.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /*
+         * 검색
+         */
+
+        searchForm.addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const keyword =
+                searchInput.value
+                    .trim()
+                    .toLowerCase();
+
+            newsRows.forEach(row => {
+
+                const title =
+                    row.querySelector(".news-title")
+                        .textContent
+                        .toLowerCase();
+
+                const category =
+                    row.dataset.category
+                        .toLowerCase();
+
+                if (
+                    keyword === "" ||
+                    title.includes(keyword) ||
+                    category.includes(keyword)
+                ) {
+
+                    row.style.display = "";
+
+                } else {
+
+                    row.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+
+        /*
+         * 모바일 메뉴
+         */
+
+        const mobileMenu =
+            document.querySelector(".mobile-menu");
+
+        mobileMenu.addEventListener("click", function() {
+
+            alert("모바일 메뉴 영역입니다.");
+
+        });
+
+    </script>
+
+</body>
+</html>
