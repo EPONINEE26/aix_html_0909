@@ -36,7 +36,39 @@ transition-property: all; 특정 요소만 지정할 수 있음
 반응형 웹 디자인 : 스마트폰에서 볼 수 있게 요소들을 정렬하는 것 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 디바이스 환경에 따라 너비 높이 알아서 지정해줄께 라는 의미 
+픽셀단위로 지정을 하면 반응형 웹 디자인 사이트로 만들 수 없음 (고정형 디자인) 
+너비를 % 로 변경해야 가능 
 
+1em = 16px 
+1.5em=24px 
+
+웹용 디자인 , 모바일용 디자인 2개의 이미지가 필요함 
+
+flex direction row  옆으로 출력 
+flex direction colum 세로로 출력 
+
+
+fron End html 
+Back End 파이썬 자바 
+
+
+<script>
+실행하려는 요소 바로 위에 있어애함 
+function 은 무조건 있어야함 
+자바 script src 로 링크 연결 
+
+한줄 작성 후 세미콜론 (;) 넣어야함 
+
+var 변수명; 
+var 변수명=값; 
+
+문자형데이터 var str = 'hello'
+숫자형데이터 var num = 100;
+논리형데이터 var bool = true or false; 
+undefinded var num; // undefinded (아에 아무것도 없는 것) 
+null var num = null; (아무것도 있지만 null이란 데이터가 있음)
+
+ number 로 지정하여 변수명을 쓸 경우 정수 실수 모두 가능함 
 
 
 
@@ -199,9 +231,171 @@ transition-property: all; 특정 요소만 지정할 수 있음
     <div></div>
     
 </body>
-</html
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 60px; height: 60px; margin: 60px; animation: rotate 1.5s infinite, background 1.5s infinite alternate; margin: 0 auto;}
+
+        @keyframes rotate {
+            from{transform: perspective(120px) rotate(0deg) rotateY('0deg');}
+            50%{transform: perspective(120px) rotateX('-180deg') rotateY('0deg');}
+            to{transform: perspective(120px) rotateX('-180deg') rotateY('-180');}
+        }
+
+        @keyframes background {
+            from{background: red;}
+            50%{background: green;}
+            to{background: blue; border-radius: 50%;}           
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; font-size: 60px; text-align: center;}
+        img{width: 100%;}
+        .nav{ height: 200px;    background: skyblue;}
+        .cont{ float: left;    height: 600px; width: 60%;   background: yellow;
+            overflow: hidden;    }
+        .aside{ float: left;   height: 600px; width: 40%;  background: green;}
+        .footer{ clear: both;  height: 300px;   background: pink;}
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">상단메뉴 부분</div>
+    <div class="cont">
+        <img src="images/a2.jpg">
+    </div>
+    <div class="aside">사이드바 부분</div>
+    <div class="footer">푸터부분 </div>     
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        header{width: 100%; height: 100%; background: green; 
+            overflow: hidden; }
+        img{max-width: 100%;}
+        .c2{display: none;}
+        @media screen and (max-width:1200px) {
+            header{background: red;}
+
+        @media screen and (max-width:800px) { 
+            header{background: yellow; }
+            .c2{display: inline-block;}
+            .c1{display: none;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="c1" src="images/img_main_slide_20240612_2_pc.jpg">
+        <img class="c2" src="images/img_main_slide_20240612_2_m.jpg">
+    </header>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{height: 300px; font-size: 40px; text-align: center;}
+        .c1{width: 25%; background: yellow; float: left;  }
+        .c2{width: 25%; background: green; float: left; }
+        .c3{width: 25%; background: skyblue; float: left; }
+        .c4{width: 25%; background: pink; float: left; }
+        @media screen and (max-width:1000px) {
+            .c4{display: none;}  
+            .c1{width: 33.3%;} 
+            .c2{width: 33.3%;}  
+            .c13{width: 33.3%;}  
+
+        @media screen and (max-width:800px) {
+            .c4{display: none;} 
+            .c3{display: none;}   
+            .c1{width: 50%;} 
+            .c2{width: 50%;}  
+   
+        @media screen and (max-width:600px) {
+            .c4{display: none;} 
+            .c3{display: none;} 
+            .c1{width: 100%;} 
+            .c2{width: 100%; clear: both;} 
+    
+   
 
 
 
+
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">켄텐츠 1</div>
+    <div class="c2">켄텐츠 2</div>
+    <div class="c3">켄텐츠 3</div>
+    <div class="c4">켄텐츠 4</div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        /*변수명 지정 */ 
+        var name = "유관순"; // 변수선언 : 옛날버젼
+        let name2 = "강감찬"// 변수선언 : 최신버젼
+        const name3 = "김구" // 상수 : 처음값을 변경할 수 없는 것 
+        name4 = "김유신"
+        console.log("이름 : " + name4)
+
+        function btn(){
+            document.getElementById("id").value = "홍길동"; } 
+    </script>
+    <input type="text" name="id" id="id" value="이순신"><br>
+    <button type="button" onclick="btn()">버튼</button>
+</body>
+</html>
 
 
