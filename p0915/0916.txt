@@ -20,7 +20,7 @@ s
 언제 사용/생성하는가: 리스트(slist) 안의 모든 항목을 하나씩 순서대로 확인하거나 처리해야 할 때(students.py의 print(), stuFunc.py의 stu_update()에서처럼) for s in slist: 형태로 만들고, 그 반복문 블록 안에서만 사용합니다.
 
 
-이름	무엇인가	   					언제 생기는가					어디서/언제 쓰는가
+이름	    무엇인가	   				  언제 생기는가					   어디서/언제 쓰는가
 str	파일에서 읽은 한 줄 (안 자름)			한 줄 읽을 때마다		 		바로 다음 줄에서 자르는 용도로만
 stu	str을 쉼표로 자른 조각들			str을 자를 때마다	바로 				다음 줄에서 학생 객체 만드는 용도로만
 slist	학생 객체들을 모아두는 리스트		프로그램 시작 시 1번				학생이 새로 생길 때마다 추가, 전체를 볼 때마다 조회
@@ -593,4 +593,143 @@ input : value 값으로 가지고 와서 처리
     
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="n1" id="n1"><br>
+    <input type="text" name="n2" id="n2"><br> 
+    <input type="text" name="n3" id="n3"><br> 
+    <button type="button">확인</button> 
+    <h2>결화</h2>
+    <div id="d01"></div>
+
+    <script>
+        function bt(){
+            // alert("확인")
+            // n1, n2를 비교해서 더 큰 값을 출력하시오 
+            // 타입 : str,int,float,boolean,defined,null
+            // 변수선언 : var-옛버전, let-최신버전, const-상수
+            // console.log,document.write,alert,confirm,prompt
+            // input - value, 그외태그 - innerTex
+
+            result = a>b? a:b; 
+            document.getElementById("d01").innerText = result; 
+
+            var a=Number(document.getElementById("n1").value);
+            var b=Number(document.getElementById("n2").value);
+            result = n1>n2? n1:n2; 
+            document.getElementById("result").innerText = result; 
+
+
+            var a=Number(document.getElementById("n1").value);
+            var b=Number(document.getElementById("n2").value);
+            var c=Number(Document/getElementById("n3").value); 
+            result = a>b?(a>c?a:c):(b>c?b:c); 
+            document.getElementById("result").innerText = result; 
+
+
+
+        }
+    </script>>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="id" id="id">
+    <button type="button" onclick="btn()">확인</button>
+
+    // *var a = 50
+    if (a>10){
+        alert ("10보다 큰 수입니다."); 
+    }else {
+        document.write('10보다 작은수입니다.')     
+            }
+
+    <script>
+        function btn() {
+            alert ("test"); 
+            document.getElementById("id").value; 
+
+            let a = 
+
+        }
+    </script>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>현재잔액</h2>
+    <h2>200000</h2>
+    <input type="text" name="num" id="num">
+    <button type="button" onclick="btn()">확인</button>
+    <script>
+        function btn() {
+            // alert ("num"); 
+            var num = document.getElementById("num").value;  
+            if (num>10)
+            alert("10보다 큰수입니다.")
+        }else{
+            document.write("10보다 작은수입니다.")
+        }
+
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d01{width: 200px; height: 100px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <input type="text" name="birth id="birth" placeholder="예) 2000,3,1"><br>
+    <button type="button" onclick="btn()">확인</button>
+    <h2>당신의 생일은></h2>
+    <div id="d01"></div>
+
+    <script>
+function btn(){
+            //alert("test");
+            var birth = document.getElementById("birth").value;
+            birth = birth.split(",");
+            console.log(birth[0]);
+            console.log(birth[1]);
+            console.log(birth[2]);
+            console.log(birth[0]+"년 "+birth[1]+"월 "+birth[2]+"일");
+            document.getElementById("d01").innerText = birth[0]+"년 "+birth[1]+"월 "+birth[2]+"일";
+        }
+    </script>
+</body>
+</html>
+
+
+document.getElementById("d01").innerText = ``; backkey 
+
 
