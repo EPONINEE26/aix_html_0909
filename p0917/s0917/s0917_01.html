@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; }
+        h3{width: 200px; height: 60px; border: 1px solid black; text-align: center; line-height: 60px; }
+        button{width: 200px; height: 30px;}
+    </style>
+</head>
+<body>
+    <h3>총점</h3>
+    <h3 id="total">100</h3>
+    <input type="text" name="kor" id="kor" placeholder="국어점수입력"><br> 
+    <input type="text" name="eng" id="eng" placeholder="영어점수입력"><br> 
+    <input type="text" name="math" id="math" placeholder="수학점수입력"><br> 
+    <button type="button">저장</button>
+    <script>
+        //타입 : str, int, float, boolenan
+        // 타입변환 : Number(), parseInt(), parseFloat(), toString()
+        // 확인 : console.log(), alert(), document.write(), confirm(), prompt()
+        // 데이터 불러오는 방법 : document.getElementById().value, document.getElementById().innerText, document.getElementById().innerHtml 
+        var total = document.getElementById("total").innerText; 
+        
+        var kor = document.getElementById("kor").value;
+        var eng = document.getElementById("eng").valuet;
+        var mathr = document.getElementById("math").value;
+
+        console.log("합게"+total)
+        
+
+    </script>
+</body>
+</html>
