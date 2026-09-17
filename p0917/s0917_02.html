@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+<body>
+    <script>
+        var a = Number (prompt("숫자를 입력하세요."));
+        if (a>0){
+            document.write("양수");
+        }else if(a==0) { 
+            document.write("0");
+        }else {
+            document.write("음수");
+        }
+
+        // 한줄로도 쓸 수 있으나 명령어가 1개만 있을 때 가능 
+        if (a>0) document.write("양수");
+        else if(a==0) document.write("0");
+        else document.write("음수");
+
+        //alert(a);
+    </script>
+</body>
+</html>
