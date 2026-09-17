@@ -11,6 +11,9 @@
 </head>
 <body>
     <script>
+        // input 으로만 정보를 입력받는다. prompt는 token 키가 없기에 사용을 잘 하지 않음 
+        // form폼 : csrf token -> 서버에서 토큰키를 발급해서 처리 해킹 방지를 위헤 token 키 발급받아 처리 
+        // 서버에서 보내준 form 인지 확인함 
         var a = Number (prompt("숫자를 입력하세요."));
         if (a>0){
             document.write("양수");

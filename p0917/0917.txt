@@ -1,0 +1,6 @@
+if 문 안에 if 문 사용 가능 
+
+if / elif if / else
+if / if /,,,,, 
+
+
