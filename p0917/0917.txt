@@ -3,4 +3,27 @@ if 문 안에 if 문 사용 가능
 if / elif if / else
 if / if /,,,,, 
 
+while (true) {
+조건식 비교문 입력 
+} 
 
+for 문 안에 if 문 사용 가능
+if 문 안에 for 문 사용 가능
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (var i=1;i<=10; i++ ){
+            document.write(i+"<br>");
+
+        }
+    </script>
+</body>
+</html
