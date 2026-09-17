@@ -25,11 +25,14 @@
     <script>
         var arr = ['홍길동','유관순','이순신'];
         function saveBtn(){
+            var nlist = document.getElementById("tbody");
             var name = document.getElementById("name").value; 
             arr.push(name); 
             document.getElementById("name").valu =""; 
             console.log(arr); 
             //alert("test");
+            //nlist.innerHTML += `<tr><td>${name}</td></tr>`; // 아랫쪽으로 출력
+            nlist.innerHTML = `<tr><td>${name}</td></tr>` +nlist.innerHTML; //위쪽으로 출력 
         }
 
         var txtHtml = ``;
