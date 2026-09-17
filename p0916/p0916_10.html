@@ -156,3 +156,165 @@
     </div>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 보기 - 포레스트 리솜</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; border-bottom: 1px solid #eee; }
+        .logo { font-size: 22px; font-weight: bold; color: #1b3626; font-family: 'Georgia', serif; }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        
+        .view-header { border-bottom: 2px solid #1b3626; padding-bottom: 15px; margin-bottom: 20px; }
+        .view-header h2 { font-size: 24px; color: #222; margin-bottom: 10px; }
+        .view-info { font-size: 13px; color: #777; display: flex; gap: 20px; }
+        
+        .view-content { padding: 20px 0; border-bottom: 1px solid #eee; line-height: 1.8; color: #444; }
+        
+        /* Inline Images for View Page */
+        .content-img-main { width: 100%; height: 400px; object-fit: cover; border-radius: 6px; margin: 20px 0; }
+        .content-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .content-img-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 6px; }
+
+        /* Bottom Action Buttons */
+        .bottom-actions { margin-top: 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .btn-group-left, .btn-group-right { display: flex; gap: 8px; }
+
+        .btn-action { padding: 8px 16px; border-radius: 4px; font-size: 14px; border: 1px solid #ccc; background: #fff; cursor: pointer; color: #444; }
+        .btn-action:hover { background: #f5f5f5; }
+        .btn-primary { background-color: #4f64ff; color: white; border: none; }
+        .btn-primary:hover { background-color: #3b50e6; }
+
+        /* Comment Section */
+        .comment-section { margin-top: 40px; }
+        .comment-section h3 { font-size: 18px; margin-bottom: 15px; }
+        .comment-form { display: flex; gap: 10px; margin-bottom: 25px; }
+        .comment-form textarea { flex: 1; height: 70px; border: 1px solid #ddd; border-radius: 4px; padding: 10px; resize: none; }
+        .comment-form button { width: 100px; background: #1b3626; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        
+        .comment-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; }
+        .comment-writer { font-weight: bold; margin-bottom: 4px; font-size: 13px; color: #333; }
+
+        /* --- Write Popup Modal --- */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 9999; justify-content: center; align-items: center; }
+        .modal-content { background: #fff; width: 100%; max-width: 900px; padding: 40px; border-radius: 8px; position: relative; max-height: 90vh; overflow-y: auto; }
+        .modal-close { position: absolute; top: 20px; right: 25px; font-size: 24px; cursor: pointer; border: none; background: none; color: #888; }
+
+        /* Attached Screenshot Style UI */
+        .write-container { font-family: sans-serif; }
+        .write-container h1 { font-size: 24px; font-weight: bold; margin-bottom: 25px; color: #000; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; color: #333; }
+        .form-control { width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; color: #333; outline: none; }
+        .form-control::placeholder { color: #a0aec0; }
+        textarea.form-control { height: 180px; resize: vertical; }
+        .btn-box { display: flex; gap: 8px; margin-top: 25px; }
+        .btn-blue { background-color: #4f64ff; color: #fff; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="main.html">FOREST RESOM</a></div>
+    </header>
+
+    <div class="container">
+        <div class="view-header">
+            <h2>[공지] 포레스트 리솜 봄맞이 스파 패키지 오픈 안내</h2>
+            <div class="view-info">
+                <span>작성자: 관리자</span>
+                <span>작성일: 2026-03-15</span>
+                <span>조회수: 142</span>
+            </div>
+        </div>
+
+        <div class="view-content">
+            안녕하세요. 포레스트 리솜입니다.<br><br>
+            2026년 봄을 맞아 고객 여러분께 따뜻한 휴식을 선사할 '봄맞이 스파 패키지'를 출시합니다.<br>
+            자연과 함께하는 해브나인 스파에서 피로를 풀고 힐링의 시간을 가져보세요.<br><br>
+
+            <!-- 뷰 페이지 맞춤 컨셉 이미지 -->
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=80" class="content-img-main" alt="스파 메인 이미지">
+
+            ■ 판매 기간: 2026. 03. 20 ~ 2026. 05. 31<br>
+            ■ 구성: 객실 1박 + 해브나인 스파 2인 이용권 + 웰컴 드링크 2잔<br><br>
+
+            <div class="content-img-grid">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="객실 스틸컷">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" alt="야외 라운지">
+            </div>
+        </div>
+
+        <!-- 하단 컨트롤 버튼 (요청 조건 반영) -->
+        <div class="bottom-actions">
+            <div class="btn-group-left">
+                <a href="news_list.html" class="btn-action">목록</a>
+            </div>
+            <div class="btn-group-right">
+                <button class="btn-action btn-primary" onclick="openModal()">글쓰기 (팝업)</button>
+                <a href="write.html" class="btn-action">답변달기</a>
+                <a href="write.html" class="btn-action">수정</a>
+                <button class="btn-action" onclick="alert('삭제되었습니다.')">삭제</button>
+            </div>
+        </div>
+
+        <!-- 댓글 영역 -->
+        <div class="comment-section">
+            <h3>댓글 (1)</h3>
+            <div class="comment-form">
+                <textarea placeholder="댓글을 입력해 주세요"></textarea>
+                <button>등록</button>
+            </div>
+            <div class="comment-item">
+                <div class="comment-writer">김철수 (2026-03-15 14:20)</div>
+                <div>스파 패키지 이용 시 예약 필수인가요?</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 글쓰기 팝업 모달 (이미지 디자인 적용) -->
+    <div class="modal-overlay" id="writeModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="write-container">
+                <h1>게시글 작성</h1>
+                <form onsubmit="event.preventDefault(); alert('등록 완료!'); closeModal();">
+                    <div class="form-group">
+                        <label>제목</label>
+                        <input type="text" class="form-control" placeholder="제목을 입력해 주세요">
+                    </div>
+                    <div class="form-group">
+                        <label>작성자</label>
+                        <input type="text" class="form-control" placeholder="이름을 입력해 주세요">
+                    </div>
+                    <div class="form-group">
+                        <label>TAG</label>
+                        <input type="text" class="form-control" placeholder="태그를 입력해 주세요">
+                    </div>
+                    <div class="form-group">
+                        <label>내용</label>
+                        <textarea class="form-control" placeholder="내용을 입력해 주세요"></textarea>
+                    </div>
+                    <div class="btn-box">
+                        <button type="submit" class="btn-blue">등록</button>
+                        <button type="button" class="btn-blue" onclick="closeModal()">목록</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('writeModal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('writeModal').style.display = 'none'; }
+    </script>
+</body>
+</html>

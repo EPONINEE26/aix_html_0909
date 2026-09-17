@@ -11,20 +11,25 @@
 
     <input type="text" name="num" id="num">
     <button type="button" onclick="btn()">확인</button>
+
+    <p id="resultText"></p>
+
     <script>
         function btn() {
-            var money = document.getElementById("money").innerText; 
-            console.log("머니 : ", money) 
+            var money = document.getElementById("money").innerText;
+            console.log("머니 : ", money);
+ 
+            var a = Number(document.getElementById("num").value);
+            console.log("입력한 숫자 : ", a);
 
-        let a = Number(document.getElementById("num").value);
-        console.log("입력한 숫자 : ", a);
+            document.getElementById("money").innerText = money - a;
 
-        if (a > 10) { 
-            document.write("10보다 큰수입니다.");
-        } else {
-            document.write("10보다 작은수입니다."); 
+            if (a > 10) {
+                document.getElementById("resultText").innerText = "10보다 큰수입니다.";
+            } else {
+                document.getElementById("resultText").innerText = "10보다 작은수입니다.";
+            }
         }
-    } 
     </script>
 </body>
 </html>

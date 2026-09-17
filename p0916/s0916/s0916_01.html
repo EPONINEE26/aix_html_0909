@@ -10,21 +10,30 @@
 </head>
 <body>
     <script>
-        /*변수명 지정  
+        /*변수명 지정   */
         var name = "유관순"; // 변수선언 : 옛날버젼
         let name2 = "강감찬"// 변수선언 : 최신버젼
         const name3 = "김구" // 상수 : 처음값을 변경할 수 없는 것 
         name4 = "김유신"
-        console.log("이름 : " + name4) */
+        document.write("이름 : " + name +"," + name2 +"," + name3 + "," + name4);
+        console.log("이름 : " + name4) 
 
+    
         function btn(){
             alert("div : " +document.getElementById("d01").innerText);
             kor = document.getElementById("kor").value ;
             eng = document.getElementById("eng").value ; // Number, parseInt(), parseFloat() 
-            document.getElementById("total").value = Number(kor)+ Number(eng);     
-
+            document.getElementById("total").value = Number(kor)+ Number(eng); }   
+      
+        function btn() {
+            var bonus = Number(document.getElementById("d01").innerText);
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var total = bonus + kor + eng;
+            document.getElementById("total").value = total;
         }
-        
+      
+
     </script>
     <div id="d01">85</div>
     <label>국어</label>
@@ -34,6 +43,7 @@
     <button type="button" onclick="btn()">저장</button>
     <label>합계</label>
     <input type="text" name="total" id="total" ><br>
-    
+
+   
 </body>
 </html>

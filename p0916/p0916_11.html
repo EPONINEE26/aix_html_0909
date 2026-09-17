@@ -226,3 +226,118 @@
     </div>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성 - 포레스트 리솜</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #000; background: #fff; padding: 40px; }
+        
+        .container { max-width: 950px; margin: 0 auto; }
+        
+        .write-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+
+        h1 { font-size: 24px; font-weight: bold; margin-bottom: 25px; color: #000; }
+        
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; color: #333; }
+        
+        .form-control { width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; color: #333; outline: none; }
+        .form-control::placeholder { color: #a0aec0; }
+        
+        textarea.form-control { height: 220px; resize: vertical; }
+
+        /* 첨부한 이미지의 버튼 디자인 동일 반영 */
+        .btn-box { display: flex; gap: 8px; margin-top: 25px; }
+        .btn-blue { background-color: #4f64ff; color: #fff; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-block; }
+        .btn-blue:hover { background-color: #3b50e6; }
+
+        /* 글쓰기 페이지 우측 컨셉 이미지 카드 */
+        .side-image-card { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fafafa; height: fit-content; }
+        .side-image-card img { width: 100%; height: 200px; object-fit: cover; }
+        .side-image-card .info { padding: 15px; font-size: 13px; color: #666; }
+
+        /* 하단 컨트롤 및 댓글 */
+        .extra-actions { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .btn-group { display: flex; gap: 6px; }
+        .btn-outline { background: #fff; border: 1px solid #cbd5e0; color: #4a5568; padding: 8px 14px; border-radius: 4px; font-size: 13px; cursor: pointer; text-decoration: none; }
+
+        .comment-wrap { margin-top: 30px; background: #f8fafc; padding: 25px; border-radius: 8px; border: 1px solid #edf2f7; }
+        .comment-input-box { display: flex; gap: 10px; margin-top: 10px; }
+        .comment-input-box textarea { flex: 1; height: 60px; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px; font-size: 13px; resize: none; }
+        .comment-input-box button { background: #4a5568; color: white; border: none; padding: 0 18px; border-radius: 4px; font-size: 13px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>게시글 작성</h1>
+        
+        <div class="write-layout">
+            <!-- 왼쪽: 작성 폼 (첨부된 이미지 구현) -->
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label>제목</label>
+                    <input type="text" class="form-control" placeholder="제목을 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label>작성자</label>
+                    <input type="text" class="form-control" placeholder="이름을 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label>TAG</label>
+                    <input type="text" class="form-control" placeholder="태그를 입력해 주세요">
+                </div>
+
+                <div class="form-group">
+                    <label>내용</label>
+                    <textarea class="form-control" placeholder="내용을 입력해 주세요"></textarea>
+                </div>
+
+                <!-- 첨부 이미지 내 버튼 그룹 -->
+                <div class="btn-box">
+                    <button type="submit" class="btn-blue">등록</button>
+                    <a href="news_list.html" class="btn-blue">목록</a>
+                </div>
+            </form>
+
+            <!-- 오른쪽: 이미지 배너 영역 -->
+            <div class="side-image-card">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=500&q=80" alt="포레스트 리솜 전경">
+                <div class="info">
+                    <strong>포레스트 리솜 게시판 작성 가이드</strong><br>
+                    자연 보호 및 올바른 리조트 문화 조성을 위해 비방 및 광고성 글은 제재될 수 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <!-- 하단 추가 버튼 (목록, 답변달기, 수정, 삭제) -->
+        <div class="extra-actions">
+            <a href="news_list.html" class="btn-outline">목록</a>
+            <div class="btn-group">
+                <a href="#" class="btn-outline">답변달기</a>
+                <a href="#" class="btn-outline">수정</a>
+                <button type="button" class="btn-outline" onclick="alert('삭제되었습니다.')">삭제</button>
+            </div>
+        </div>
+
+        <!-- 하단 댓글 영역 -->
+        <div class="comment-wrap">
+            <strong style="font-size: 14px; color:#2d3748;">댓글 작성</strong>
+            <div class="comment-input-box">
+                <textarea placeholder="댓글을 입력해 주세요."></textarea>
+                <button type="button">등록</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

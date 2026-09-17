@@ -192,6 +192,7 @@
 </html>
 
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -244,6 +245,114 @@
             </tbody>
         </table>
         <a href="write.html" class="btn-write">글쓰기</a>
+    </div>
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소식 & 이벤트 - 포레스트 리솜</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #fff; border-bottom: 1px solid #eee; }
+        .logo { font-size: 22px; font-weight: bold; color: #1b3626; font-family: 'Georgia', serif; }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+
+        /* Sub Page Sub-Hero Banner with Image */
+        .sub-banner { height: 220px; background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; position: relative; color: white; }
+        .sub-banner-overlay { position: absolute; inset: 0; background: rgba(27, 54, 38, 0.5); }
+        .sub-banner h1 { position: relative; z-index: 1; font-family: 'Georgia', serif; font-size: 32px; letter-spacing: 2px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Board Table with Thumbnails */
+        .board-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        .board-table th { background: #f8f9fa; border-top: 2px solid #1b3626; border-bottom: 1px solid #ddd; padding: 15px; font-weight: 500; }
+        .board-table td { border-bottom: 1px solid #eee; padding: 12px; text-align: center; font-size: 14px; color: #555; vertical-align: middle; }
+        .board-table td.title { text-align: left; }
+        .thumb-img { width: 70px; height: 50px; object-fit: cover; border-radius: 4px; display: block; }
+
+        .bottom-wrap { display: flex; justify-content: space-between; align-items: center; }
+        .pagination { display: flex; gap: 5px; margin: 0 auto; }
+        .pagination a { padding: 6px 12px; border: 1px solid #ddd; font-size: 13px; color: #666; border-radius: 3px; }
+        .pagination a.active { background: #1b3626; color: #fff; border-color: #1b3626; }
+        .btn-write { background-color: #4f64ff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="main.html">FOREST RESOM</a></div>
+        <nav>
+            <ul>
+                <li><a href="main.html">리솜소개</a></li>
+                <li><a href="main.html">객실안내</a></li>
+                <li><a href="news_list.html">NEWS & EVENT</a></li>
+            </ul>
+        </nav>
+        <div><a href="signUp.html" style="font-size: 14px;">회원가입</a></div>
+    </header>
+
+    <!-- Sub Page Image Banner -->
+    <div class="sub-banner">
+        <div class="sub-banner-overlay"></div>
+        <h1>NEWS & EVENT</h1>
+    </div>
+
+    <div class="container">
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th style="width: 8%;">번호</th>
+                    <th style="width: 12%;">이미지</th>
+                    <th style="width: 48%;">제목</th>
+                    <th style="width: 12%;">작성자</th>
+                    <th style="width: 12%;">날짜</th>
+                    <th style="width: 8%;">조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5</td>
+                    <td><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=150&q=80" class="thumb-img" alt="스파"></td>
+                    <td class="title"><a href="news_view.html">[공지] 포레스트 리솜 봄맞이 스파 패키지 오픈 안내</a></td>
+                    <td>관리자</td>
+                    <td>2026-03-15</td>
+                    <td>142</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=150&q=80" class="thumb-img" alt="공연"></td>
+                    <td class="title"><a href="news_view.html">[이벤트] 숲속 힐링 버스킹 공연 일정 안내</a></td>
+                    <td>운영팀</td>
+                    <td>2026-03-10</td>
+                    <td>389</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=150&q=80" class="thumb-img" alt="객실"></td>
+                    <td class="title"><a href="news_view.html">2026 포레스트 리솜 신규 객실 리노베이션 완료</a></td>
+                    <td>관리자</td>
+                    <td>2026-02-28</td>
+                    <td>512</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="bottom-wrap">
+            <div style="width: 80px;"></div>
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+            </div>
+            <a href="write.html" class="btn-write">글쓰기</a>
+        </div>
     </div>
 </body>
 </html>

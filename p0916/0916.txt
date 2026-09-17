@@ -1,0 +1,735 @@
+stu
+의미: 파일에서 읽은 한 줄을 콤마(,)로 잘라놓은 조각들. 리스트 형태로 ["1", "홍길동", "99", "100", "100", "299", "99.66"] 이렇게 생겼습니다.
+왜 생성되어야만 하는가: 파일 한 줄은 자르기 전에는 하나로 붙은 글자 뭉치라서, 번호·이름·점수를 따로따로 꺼낼 수 없습니다. 잘라야만 각 항목에 접근할 수 있기 때문에 만들어야 합니다.
+언제 사용/생성하는가: 파일이나 외부 입력에서 온 하나의 문자열을 항목별로 나눠야 할 때 만듭니다. 나누고 나서 그 값들로 객체(여기선 학생 객체)를 만드는 데 바로 씁니다.
+slist
+의미: 학생 객체 여러 개를 순서대로 담아두는 리스트.
+왜 생성되어야만 하는가: 학생이 1명이 아니라 여러 명이기 때문입니다. 여러 개를 담을 그릇이 없으면 한 명 만들 때마다 이전 사람 정보를 잃어버립니다.
+언제 사용/생성하는가: 같은 종류의 데이터(학생)를 여러 개 모아서 나중에 전체 조회, 검색, 수정을 해야 할 때 만듭니다. 프로그램 시작할 때 빈 리스트로 한 번 만들고, 이후 새 학생이 생길 때마다 추가합니다.
+stus
+의미: slist를 가지고 있는 Students 클래스의 실제 객체(인스턴스). "학생 전체를 관리하는 창고" 그 자체.
+왜 생성되어야만 하는가: slist는 클래스 설계도 안에 정의만 되어 있을 뿐이라, 실제로 사용하려면 그 설계도로 물건을 하나 만들어야 합니다. 그 물건이 stus이고, 이게 있어야 add(), print() 같은 기능을 실제로 호출할 수 있습니다.
+언제 사용/생성하는가: 데이터(학생 리스트)와 그 데이터를 다루는 기능(추가, 출력)을 하나로 묶은 클래스를 실제로 쓰고 싶을 때, 프로그램 시작 시 한 번 만들고, 이후 학생 추가/출력 등을 시킬 때마다 stus.add(...), stus.print()처럼 사용합니다.
+stuList
+의미: stuFunc.py 맨 위에 선언만 되어 있는 빈 리스트.
+왜 생성되어야만 하는가: 사실 생성될 필요가 없었습니다. 코드 어디에서도 쓰이지 않는, 실수로 남은 변수입니다.
+언제 사용/생성하는가: 실제로는 아무 데도 사용되지 않습니다. 지워도 프로그램은 동일하게 동작합니다.
+s
+의미: 반복문에서 slist 안의 학생들을 한 명씩 순서대로 가리킬 때 그 "한 명"을 부르는 이름.
+왜 생성되어야만 하는가: 파이썬의 for 이름 in 리스트: 문법상, 리스트 안 항목 하나하나를 가리킬 이름이 반드시 있어야 하기 때문입니다. 이름이 없으면 "지금 어느 학생을 보고 있는지" 지정할 방법이 없습니다.
+언제 사용/생성하는가: 리스트(slist) 안의 모든 항목을 하나씩 순서대로 확인하거나 처리해야 할 때(students.py의 print(), stuFunc.py의 stu_update()에서처럼) for s in slist: 형태로 만들고, 그 반복문 블록 안에서만 사용합니다.
+
+
+이름	    무엇인가	   				  언제 생기는가					   어디서/언제 쓰는가
+str	파일에서 읽은 한 줄 (안 자름)			한 줄 읽을 때마다		 		바로 다음 줄에서 자르는 용도로만
+stu	str을 쉼표로 자른 조각들			str을 자를 때마다	바로 				다음 줄에서 학생 객체 만드는 용도로만
+slist	학생 객체들을 모아두는 리스트		프로그램 시작 시 1번				학생이 새로 생길 때마다 추가, 전체를 볼 때마다 조회
+stus	slist를 가진 진짜 창고(객체)			프로그램 시작 시 1번				학생 추가/출력 등 "창고에 시킬 일"이 있을 때마다
+s	지금 반복문에서 보고 있는 학생 1명	for s in ... 실행되는 순간			그 반복문 블록 안에서만
+stuList	(안 쓰임)					만들어지기만 함					아무 데도 안 씀
+
+
+perspective(500px) 숫자가 낮을 수록 입체감이 더 크다  숫자가 높을 수록 입체감은 적게 느낀다
+backface-visibility: hidden;} 뒤집었을 때 이미지를 안 보일때 
+transition-property: all; 특정 요소만 지정할 수 있음 
+
+반응형 웹 디자인 : 스마트폰에서 볼 수 있게 요소들을 정렬하는 것 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+디바이스 환경에 따라 너비 높이 알아서 지정해줄께 라는 의미 
+픽셀단위로 지정을 하면 반응형 웹 디자인 사이트로 만들 수 없음 (고정형 디자인) 
+너비를 % 로 변경해야 가능 
+
+1em = 16px 
+1.5em=24px 
+
+웹용 디자인 , 모바일용 디자인 2개의 이미지가 필요함 
+
+flex direction row  옆으로 출력 
+flex direction colum 세로로 출력 
+
+
+fron End html 
+Back End 파이썬 자바 
+
+* 자바 스트립터 -----------------------------------------------------------
+
+<script>
+실행하려는 요소 바로 위에 있어애함 
+function 은 무조건 있어야함 
+자바 script src 로 링크 연결 
+
+한줄 작성 후 세미콜론 (;) 넣어야함 
+
+var 변수명; 
+var 변수명=값; 
+
+문자형데이터 var str = 'hello'
+숫자형데이터 var num = 100;
+논리형데이터 var bool = true or false; 
+undefinded var num; // undefinded (아에 아무것도 없는 것) 
+null var num = null; (아무것도 있지만 null이란 데이터가 있음)
+
+Number, parseInt(), parseFloat() 로 지정하여 변수명을 쓸 경우 정수 실수 모두 가능함 
+
+문자형 변환 연산자 
+Number() 
+toString()
+Boolean()
+
+숫자형 변환 연산자 
+parseInt()
+parseFloat()
+Number() 
+
+문자열 + 숫자열인 경우 모든 문자열로 인식하여 그대로 출력 
+"100" + 200 = 100200 
+
+
+var A =++B  B에 1을 증감하여 A에 대입
+var A = B ++ 먼저 B를 A에 대입 후 1을 추가하여 게산함 
+input : value 값으로 가지고 와서 처리
+그 외에는 inner Text 값으로 가지고 와서 처리 
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 500px; margin: 0 auto;}
+        img{width: 300px; transition: all 1s; backface-visibility: hidden;}
+
+        /* perspective 입체감, 낮을 수로 입체감이 큼 
+        transform-origin : 변형의 기준점 지정하는 것 
+        .c1:hover{transform: skewX(45deg); transform-origin: left top;}
+        .c2:hover{transform: rotateY(180deg); perspective:(180px) ;}
+        .c3:hover{transform: perspective(100px) rotateY(180deg); } */ 
+
+        /* skew 기울기 
+        .c1:hover{transform: skewX(45deg);}
+        .c2:hover{transform: skewY(45deg);}
+        .c3:hover{transform: skew(45deg, 20deg);} */
+
+
+        /* rotate 회전  
+        .c1:hover{transform: rotateX(45deg) ;}
+        .c2:hover{transform: rotateY(45deg) ;}
+        .c3:hover{transform: rotate(45deg) ;} */
+
+
+        /* scale 확대 
+        .c1:hover{transform: scaleX(1.5) ;}
+        .c2:hover{transform: scaleY(1.5) ;}
+        .c3:hover{transform: scale(1.5) ;} */ 
+
+
+        /* translate 이동
+        .c1:hover{transform: translateX(100px);}
+        .c2:hover{transform: translateY(50px);}
+        .c3:hover{transform: translate(50px,50px);} */ 
+
+    </style>
+</head>
+<body>
+    <div>
+        <img class="c1" src="images/a2.jpg"><br><br>
+        <img class="c2" src="images/a2.jpg"><br><br>
+        <img class="c3" src="images/a2.jpg"><br><br>
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 300px; height: 300px; background: blue;
+            transition-property: all;
+            transition-duration: 1s,1s;
+        
+        } 
+        div:hover{width: 400px; height: 400px; background: red; border-radius: 50%; }
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 300px; height: 300px; background: blue;
+            transition-property: all;
+            transition-duration: 1s,1s;
+        
+        } 
+        div:hover{width: 400px; height: 400px; background: red; border-radius: 50%; }
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 300px; height: 300px; background: blue;
+
+            /* 
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: linear;
+            transition-delay: 3s */ 
+
+            transition:all 0.5s ease-out 0.2s;
+        } 
+
+
+
+        div:hover{width: 400px; height: 400px; background: red; border-radius: 50%; }
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px; margin: 100px; 
+            animation-name: ract 1.5s infinite ; background: red; background: 1.5s infinite alternater;         
+        }
+
+        @keyframes ract{
+            from{transform: perspective(200px) rotateX(0deg) rotateY('0deg') ;}
+            50%{transform: perspective(200px) rotateX(-180deg) rotateY('0deg') ;}
+            to{transform: perspective(200px) rotateX(-180deg) rotateY('-180deg') ;}
+        }
+
+        @keyframes background{
+            from{background: red; transform: scale(1);}
+            50%{background: green; transform: scale(1.5)}
+            to{background: blue; transform: scale(2)}
+            }       
+
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 60px; height: 60px; margin: 60px; animation: rotate 1.5s infinite, background 1.5s infinite alternate; margin: 0 auto;}
+
+        @keyframes rotate {
+            from{transform: perspective(120px) rotate(0deg) rotateY('0deg');}
+            50%{transform: perspective(120px) rotateX('-180deg') rotateY('0deg');}
+            to{transform: perspective(120px) rotateX('-180deg') rotateY('-180');}
+        }
+
+        @keyframes background {
+            from{background: red;}
+            50%{background: green;}
+            to{background: blue; border-radius: 50%;}           
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{width: 100%; font-size: 60px; text-align: center;}
+        img{width: 100%;}
+        .nav{ height: 200px;    background: skyblue;}
+        .cont{ float: left;    height: 600px; width: 60%;   background: yellow;
+            overflow: hidden;    }
+        .aside{ float: left;   height: 600px; width: 40%;  background: green;}
+        .footer{ clear: both;  height: 300px;   background: pink;}
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">상단메뉴 부분</div>
+    <div class="cont">
+        <img src="images/a2.jpg">
+    </div>
+    <div class="aside">사이드바 부분</div>
+    <div class="footer">푸터부분 </div>     
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        header{width: 100%; height: 100%; background: green; 
+            overflow: hidden; }
+        img{max-width: 100%;}
+        .c2{display: none;}
+        @media screen and (max-width:1200px) {
+            header{background: red;}
+
+        @media screen and (max-width:800px) { 
+            header{background: yellow; }
+            .c2{display: inline-block;}
+            .c1{display: none;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="c1" src="images/img_main_slide_20240612_2_pc.jpg">
+        <img class="c2" src="images/img_main_slide_20240612_2_m.jpg">
+    </header>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{height: 300px; font-size: 40px; text-align: center;}
+        .c1{width: 25%; background: yellow; float: left;  }
+        .c2{width: 25%; background: green; float: left; }
+        .c3{width: 25%; background: skyblue; float: left; }
+        .c4{width: 25%; background: pink; float: left; }
+        @media screen and (max-width:1000px) {
+            .c4{display: none;}  
+            .c1{width: 33.3%;} 
+            .c2{width: 33.3%;}  
+            .c13{width: 33.3%;}  
+
+        @media screen and (max-width:800px) {
+            .c4{display: none;} 
+            .c3{display: none;}   
+            .c1{width: 50%;} 
+            .c2{width: 50%;}  
+   
+        @media screen and (max-width:600px) {
+            .c4{display: none;} 
+            .c3{display: none;} 
+            .c1{width: 100%;} 
+            .c2{width: 100%; clear: both;} 
+    
+   
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">켄텐츠 1</div>
+    <div class="c2">켄텐츠 2</div>
+    <div class="c3">켄텐츠 3</div>
+    <div class="c4">켄텐츠 4</div>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        /*변수명 지정 */ 
+        var name = "유관순"; // 변수선언 : 옛날버젼
+        let name2 = "강감찬"// 변수선언 : 최신버젼
+        const name3 = "김구" // 상수 : 처음값을 변경할 수 없는 것 
+        name4 = "김유신"
+        console.log("이름 : " + name4)
+
+        function btn(){
+            document.getElementById("id").value = "홍길동"; } 
+    </script>
+    <input type="text" name="id" id="id" value="이순신"><br>
+    <button type="button" onclick="btn()">버튼</button>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        /*변수명 지정 */ 
+        var name = "유관순"; // 변수선언 : 옛날버젼
+        let name2 = "강감찬"// 변수선언 : 최신버젼
+        const name3 = "김구" // 상수 : 처음값을 변경할 수 없는 것 
+        name4 = "김유신"
+        console.log("이름 : " + name4)
+
+        function btn(){
+            document.getElementById("id").value = "홍길동"; } 
+    </script>
+    <input type="text" name="id" id="id" value="이순신"><br>
+    <button type="button" onclick="btn()">버튼</button>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        /*변수명 지정  
+        var name = "유관순"; // 변수선언 : 옛날버젼
+        let name2 = "강감찬"// 변수선언 : 최신버젼
+        const name3 = "김구" // 상수 : 처음값을 변경할 수 없는 것 
+        name4 = "김유신"
+        console.log("이름 : " + name4) */
+
+        function btn(){
+            kor = document.getElementById("kor").value ;
+            eng = document.getElementById("eng").value ; // Number, parseInt(), parseFloat() 
+            document.getElementById("total").value = Number(kor)+ Number(eng);          
+
+        }
+    </script>
+    <label>국어</label>
+    <input type="text" name="kor" id="kor" ><br>
+    <label>영어</label>
+    <input type="text" name="eng" id="eng" ><br>
+    <button type="button" onclick="btn()">저장</button>
+    <label>합계</label>
+    <input type="text" name="total" id="total" ><br>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        /*변수명 지정  
+        var name = "유관순"; // 변수선언 : 옛날버젼
+        let name2 = "강감찬"// 변수선언 : 최신버젼
+        const name3 = "김구" // 상수 : 처음값을 변경할 수 없는 것 
+        name4 = "김유신"
+        console.log("이름 : " + name4) */
+
+        function btn(){
+            alert("div : " +document.getElementById("d01").innerText);
+            kor = document.getElementById("kor").value ;
+            eng = document.getElementById("eng").value ; // Number, parseInt(), parseFloat() 
+            document.getElementById("total").value = Number(kor)+ Number(eng);     
+
+        }
+    </script>
+    <div id="d01">85</div>
+    <label>국어</label>
+    <input type="text" name="kor" id="kor" ><br>
+    <label>영어</label>
+    <input type="text" name="eng" id="eng" ><br>
+    <button type="button" onclick="btn()">저장</button>
+    <label>합계</label>
+    <input type="text" name="total" id="total" ><br>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d01"></div>
+    <div id="d02">몫 : </div>
+    <div id="d03">나머지 : </div>
+    <script>
+        document.getElementById("d01").innerText = 10/3 ;
+        document.getElementById("d02").innerText = "몫 : " + parseInt(10/3);
+        document.getElementById("d03").innerText = "나머지 : " + 10%3;        
+    </script>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d01"></div>
+    <div id="d02">몫 : </div>
+    <div id="d03">나머지 : </div>
+    <script>
+
+        // 타입 : str, int, float, boolean, defined, null 
+        // 형변환, Number(), parseInt(), parseFloat(), toString()
+        // 몫 : parseInt(10/3)
+        document.getElementById("d01").innerText = 10/3 ;
+        document.getElementById("d02").innerText = "몫 : " + parseInt(10/3);
+        document.getElementById("d03").innerText = "나머지 : " + 10%3; 
+        
+        var a = 10;
+        var b = 3;
+        var result = a>b?"a가 더 큽니다." : "b가 더 큽니다."
+        // 출력하는 방법 : console.log, document.write, alert, confirm, prompt // 
+        console.log("콘솔 :" + result);
+        document.write("화면에 출력이 됩니다." +result); 
+        alert(result); //경고창
+        if(confirm("프로그램을 종료하시겠습니까?")){
+            console.log("네")
+        }else{
+            console.log("아니요")
+        }
+
+        var num = prompt("값 입력");
+        console.log("숫자 :" +num)
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="n1" id="n1"><br>
+    <input type="text" name="n2" id="n2"><br> 
+    <input type="text" name="n3" id="n3"><br> 
+    <button type="button">확인</button> 
+    <h2>결화</h2>
+    <div id="d01"></div>
+
+    <script>
+        function bt(){
+            // alert("확인")
+            // n1, n2를 비교해서 더 큰 값을 출력하시오 
+            // 타입 : str,int,float,boolean,defined,null
+            // 변수선언 : var-옛버전, let-최신버전, const-상수
+            // console.log,document.write,alert,confirm,prompt
+            // input - value, 그외태그 - innerTex
+
+            result = a>b? a:b; 
+            document.getElementById("d01").innerText = result; 
+
+            var a=Number(document.getElementById("n1").value);
+            var b=Number(document.getElementById("n2").value);
+            result = n1>n2? n1:n2; 
+            document.getElementById("result").innerText = result; 
+
+
+            var a=Number(document.getElementById("n1").value);
+            var b=Number(document.getElementById("n2").value);
+            var c=Number(Document/getElementById("n3").value); 
+            result = a>b?(a>c?a:c):(b>c?b:c); 
+            document.getElementById("result").innerText = result; 
+
+
+
+        }
+    </script>>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="id" id="id">
+    <button type="button" onclick="btn()">확인</button>
+
+    // *var a = 50
+    if (a>10){
+        alert ("10보다 큰 수입니다."); 
+    }else {
+        document.write('10보다 작은수입니다.')     
+            }
+
+    <script>
+        function btn() {
+            alert ("test"); 
+            document.getElementById("id").value; 
+
+            let a = 
+
+        }
+    </script>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>현재잔액</h2>
+    <h2>200000</h2>
+    <input type="text" name="num" id="num">
+    <button type="button" onclick="btn()">확인</button>
+    <script>
+        function btn() {
+            // alert ("num"); 
+            var num = document.getElementById("num").value;  
+            if (num>10)
+            alert("10보다 큰수입니다.")
+        }else{
+            document.write("10보다 작은수입니다.")
+        }
+
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d01{width: 200px; height: 100px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <input type="text" name="birth id="birth" placeholder="예) 2000,3,1"><br>
+    <button type="button" onclick="btn()">확인</button>
+    <h2>당신의 생일은></h2>
+    <div id="d01"></div>
+
+    <script>
+function btn(){
+            //alert("test");
+            var birth = document.getElementById("birth").value;
+            birth = birth.split(",");
+            console.log(birth[0]);
+            console.log(birth[1]);
+            console.log(birth[2]);
+            console.log(birth[0]+"년 "+birth[1]+"월 "+birth[2]+"일");
+            document.getElementById("d01").innerText = birth[0]+"년 "+birth[1]+"월 "+birth[2]+"일";
+        }
+    </script>
+</body>
+</html>
+
+
+document.getElementById("d01").innerText = ``; backkey 
+
+

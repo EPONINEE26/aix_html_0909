@@ -196,3 +196,98 @@
     </div>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포레스트 리솜 - FOREST RESOM</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(255,255,255,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #eee; }
+        .logo { font-size: 22px; font-weight: bold; letter-spacing: 2px; color: #1b3626; font-family: 'Georgia', serif; }
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        nav a { font-weight: 500; font-size: 16px; color: #222; }
+        nav a:hover { color: #2e593f; }
+        .header-utill { display: flex; gap: 15px; font-size: 14px; }
+
+        /* Hero Banner with background image */
+        .hero { height: 80vh; background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; margin-top: 60px; position: relative; }
+        .hero-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); }
+        .hero-text { position: relative; z-index: 1; }
+        .hero-text h2 { font-family: 'Georgia', serif; font-size: 48px; font-weight: normal; margin-bottom: 15px; }
+
+        /* Cards Grid with Images */
+        .quick-sec { padding: 80px 10%; background: #f9f8f6; text-align: center; }
+        .section-title { font-size: 28px; color: #1b3626; margin-bottom: 40px; font-family: 'Georgia', serif; }
+        .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .card { background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .card img { width: 100%; height: 240px; object-fit: cover; }
+        .card-body { padding: 25px 20px; }
+        .card-body h3 { font-size: 20px; color: #222; margin-bottom: 10px; }
+
+        footer { background: #1b3626; color: #8a9a90; padding: 40px 10%; font-size: 13px; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">FOREST RESOM</div>
+        <nav>
+            <ul>
+                <li><a href="main.html">리솜소개</a></li>
+                <li><a href="main.html">객실안내</a></li>
+                <li><a href="main.html">스파&가든</a></li>
+                <li><a href="news_list.html">NEWS & EVENT</a></li>
+            </ul>
+        </nav>
+        <div class="header-utill">
+            <a href="signUp.html">회원가입</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h2>Rest in Primitive Nature</h2>
+            <p>온전한 휴식이 시작되는 숲속의 쉼터, 포레스트 리솜</p>
+        </div>
+    </section>
+
+    <section class="quick-sec">
+        <h2 class="section-title">SPECIAL EXPERIENCE</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="해브나인 스파">
+                <div class="card-body">
+                    <h3>해브나인 스파</h3>
+                    <p>자연이 품은 에코 힐링 스파에서 만나는 특별한 휴식</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="빌라 객실">
+                <div class="card-body">
+                    <h3>빌라 객실</h3>
+                    <p>울창한 숲에 둘러싸인 독채형 프라이빗 객실</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=80" alt="다이닝">
+                <div class="card-body">
+                    <h3>다이닝</h3>
+                    <p>신선한 제철 식재료로 선보이는 프리미엄 미식</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>충청북도 제천시 백운면 금봉로 365 포레스트 리솜 | TEL 043-649-6000</p>
+        <p>© HOBAIN HOTEL & RESORT Co., Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
