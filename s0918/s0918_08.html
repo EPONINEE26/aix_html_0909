@@ -57,7 +57,7 @@
             // 문서 전체를 다시 읽는 동적함수 
             $(document).on("click",".delete", function(){
                 if(confirm("학생성적을 삭제하시겠습니까?")){
-                    var delno = console.log($(this).closest("tr").attr("id")); // arr : 속성값 가지고 오라는 기능 
+                    var delno = $(this).closest("tr").attr("id"); // arr : 속성값 가지고 오라는 기능 
                     // $("요소선택").parent(), $("요소선택").parents(), $("요소선택").children(), $("요소선택").next(), $("요소선택").preview(), $("요소선택").sibling(), $("요소선택").closest()
                     // $("요소선택").parent.parents() 
                     $("#"+delno).remove();

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://jquery.com"></script>
+    <title>Document</title>
+    <style>
+        h2{text-align: center;}
+        table,th,td{border:1px solid black; border-collapse: collapse; }
+        table{width:1000px; text-align: center; box-sizing: border-box;
+        margin:50px auto;}
+        th{background: #efefef; height:60px;}
+        td{height:40px;}    
+    </style>
+    <script>
+        // 에러 방지: student 배열 내부와 saveBtn 함수 내에서 쓰이는 기본 변수들을 사전에 선언
+        var no = 0, name = "", kor = 0, eng = 0, math = 0, total = 0, avg = 0, rank = 0;
+
+        // [원본 준수] 서버에서 가져옴 구조 그대로 유지 (student.push 내부의 괄호 문법 오류만 교정)
+        var student = [
+            {"no":no,"name":name,"kor":kor,"eng":eng,"math":math,"total":total,"avg":avg,"rank":rank},
+            {"no":no,"name":name,"kor":kor,"eng":eng,"math":math,"total":total,"avg":avg,"rank":rank}
+        ];
+        
+        function saveBtn(){
+            // [원본 준수] 아이디 선택자 기호(#) 추가
+            var no = Number (\$("#no").val());
+            var name = \$("#name").val();
+            var kor= Number(\$("#kor").val());
+            var eng = Number(\$("#eng").val());
+            var math = Number(\$("#math").val());
+            var total = kor+eng+math;
+            var avg = total/3
+            var rank = 0
+
+            var txtStudent = `<tr id="\${no}">
+                <td>\${no}</td>
+                <td>\${name}</td>
+                <td>\${kor}</td>
+                <td>\${eng}</td>
+                <td>\${math}</td>
+                <td>\${total}</td>
+                <td>\${avg}</td>
+                <td>0</td>
+                <td>
+                    <button class="update">수정</button>
+                    <button class="delete">삭제</button>
+                </td></tr> `;  
+            
+            $("tbody").append(txtStudent);
+            alert("학생성적을 저장합니다.");
+
+            // [원본 준수] 대입 에러가 나던 val()= 형태의 구조적 문법 오류 수정
+            $("#no").val(""); 
+            $("#name").val("");
+            $("#kor").val("");
+            $("#eng").val("");
+            $("#math").val("");
+            $("#total").val("");
+            $("#avg").val("");
+            $("#rank").val("");
+        } 
+    </script>
+</head>
+<body>
+    <h2>학생성적프로그램</h2>
+    <input type="text" name="no" id="no" placeholder="번호입력"><br>
+    <input type="text" name="name" id="name" placeholder="이름입력"><br>
+    <input type="text" name="kor" id="kor" placeholder="국어점수입력"><br>
+    <input type="text" name="eng" id="eng" placeholder="영어점수입력"><br>
+    <input type="text" name="math" id="math" placeholder="수학점수입력"><br>
+    <button type="button" onclick="saveBtn()">저장</button>
+    <table>
+        <colgroup>
+            <col width="10%">
+            <col width="15%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+            <col width="15%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>합계</th>
+                <th>평균</th>
+                <th>등수</th>
+                <th>버튼</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table> 
+    <script>
+        var stu = ``;
+        for(var i=0; i<student.length; i++){
+            // [원본 준수] 하단 스크립트에 존재하지 않던 변수 no를 student[i].no 구조로 매핑 수정
+            stu += `<tr id="${student[i].no}">
+                <td>${student[i].no}</td>
+                <td>${student[i].name}</td>
+                <td>${student[i].kor}</td>
+                <td>${student[i].eng}</td>
+                <td>${student[i].math}</td>
+                <td>${student[i].total}</td>
+                <td>${student[i].avg}</td>
+                <td>${student[i].rank}</td>
+                <td>
+                    <button class="update">수정</button>
+                    <button class="delete">삭제</button>
+                </td></tr>`;
+        }          
+        \$("#tbody").html(stu); 
+    </script>
+</body>
+</html>
