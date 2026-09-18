@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d01{width:100px; height: 100px; border:1px solid black;}
+    </style>
+</head>
+<body>
+    <input type="text" name="kor" id="kor"><br>
+    <input type="text" name="eng" id="eng"><br>
+    <input type="text" name="math" id="math"><br>
+    <button type="button" onclick="saveBtn()">저장</button>
+    <div id="d01"></div>
+    <script>
+        function saveBtn(){
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+            var total = kor+eng+math;
+            var avg = total/3;
+            document.getElementById("d01").innerText = total;
+        }//saveBtn 부분 --------------------------------
+
+        // "1" === 1 자바스크립트에서는 같은 값으로 인식함 
+        document.getElementById("math").addEventListener("keydown",function(e){
+            if(e.key == "Enter"){
+                console.log(e.key); // math 부분에 Enter키를 치면 console 에 Enter 가 나타남 
+                console.log(e.keyCode); // math 부분에 Enter키를 치면 console 에 Enter 키 값이 나타남 
+                var kor = Number(document.getElementById("kor").value);
+                var eng = Number(document.getElementById("eng").value);
+                var math = Number(document.getElementById("math").value);
+                var total = kor+eng+math;
+                var avg = total/3;
+                document.getElementById("d01").innerText = total;
+            }
+        })
+
+
+
+    </script>
+
+</body>
+</html>
