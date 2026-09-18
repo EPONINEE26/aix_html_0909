@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적 관리 프로그램</title>
+    <style>
+        table, th, td { border: 1px solid black; border-collapse: collapse; text-align: center; }
+        th, td { width: 80px; height: 40px; }
+    </style>
+</head>
+<body>   
+    <input type="text" name="name" id="name" placeholder="이름입력">
+    <input type="text" name="kor" id="kor" placeholder="국어점수입력">
+    <input type="text" name="eng" id="eng" placeholder="영어점수입력">
+    <input type="text" name="math" id="math" placeholder="수학점수입력">
+    <input type="text" name="total" id="total" placeholder="합계점수" readonly>
+    <br>
+    <input type="text" name="avg" id="avg" placeholder="평균점수" readonly><br>
+    <button type="button" onclick="saveBtn()">저장</button>
+
+    <table style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>합계</th>
+                <th>평균</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        // 1. 초기 점수 데이터 배열을 정상적으로 할당했습니다.
+        var arr = ['홍길동', '유관순', '이순신'];
+        var arr_k = ['100', '100', '100'];
+        var arr_e = ['100', '100', '100'];
+        var arr_m = ['100', '100', '100'];
+        var arr_t = ['300', '300', '300'];
+        var arr_a = ['100.0', '100.0', '100.0'];
+
+        // 2. 웹페이지가 로드되면 화면에 기존 3명의 데이터를 즉시 그려줍니다.
+        window.onload = function() {
+            renderTable();
+        };
+
+        function saveBtn() {
+            var name = document.getElementById("name").value; 
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+
+            if(!name || isNaN(kor) || isNaN(eng) || isNaN(math)) {
+                alert("모든 필드를 올바르게 입력해주세요.");
+                return;
+            }
+
+            var total = kor + eng + math;
+            var avg = parseFloat(total / 3).toFixed(1); 
+
+            document.getElementById('total').value = total;
+            document.getElementById('avg').value = avg;
+
+            // 3. 입력 데이터를 각각의 배열에 올바르게 추가합니다.
+            arr.push(name);
+            arr_k.push(kor);
+            arr_e.push(eng);
+            arr_m.push(math);
+            arr_t.push(total);
+            arr_a.push(avg);
+
+            // 4. 새로운 데이터가 포함된 배열로 테이블을 갱신합니다.
+            renderTable();
+
+            // 5. 다음 입력을 위해 입력란 비우기
+            document.getElementById('name').value = "";
+            document.getElementById('kor').value = "";
+            document.getElementById('eng').value = "";
+            document.getElementById('math').value = "";
+        }
+
+        // 배열의 모든 요소를 반복문(for)으로 돌며 테이블 HTML을 생성하는 함수
+        function renderTable() {
+            var tbody = document.getElementById("tbody");
+            var html = "";
+
+            for (var i = 0; i < arr.length; i++) {
+                html += "<tr>";
+                html += "<td>" + arr[i] + "</td>";
+                html += "<td>" + arr_k[i] + "</td>";
+                html += "<td>" + arr_e[i] + "</td>";
+                html += "<td>" + arr_m[i] + "</td>";
+                html += "<td>" + arr_t[i] + "</td>";
+                html += "<td>" + arr_a[i] + "</td>";
+                html += "</tr>";
+            }
+            
+            tbody.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

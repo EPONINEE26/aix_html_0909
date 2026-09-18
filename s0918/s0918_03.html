@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div { width: 600px; height: 1000px; border: 1px solid black; }
+        
+        /* 1. HTML의 id 이름과 일치하도록 수정 */
+        #d01 { background: yellow; }
+        #d02 { background: green; }
+        #d03 { background: pink; }
+        
+        /* 2. height 단위를 px로 수정하고 우측 하단 고정으로 배치 변경 */
+        button { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%;
+            position: fixed;
+            right: 40px; 
+            bottom: 40px;
+            cursor: pointer;       
+        }
+    </style>
+</head>
+<body>
+    <h2 id="top">앵커태그</h2>
+    
+    <!-- 3. CSS 선택자와 일치하도록 id="d01" 형태로 수정 -->
+    <div id="d01"></div>
+    <div id="d02"></div>
+    <div id="d03"></div>
+    
+    <a href="#top"><span>앵커태그링크</span></a>
+    <button type="button" onclick="topBtn()">TOP</button>
+
+    <script>        
+        function topBtn() {
+            // 맨 위 왼쪽(0,0) 위치로 부드럽게 스크롤 이동
+            window.scrollTo({
+                top: 0, 
+                left: 0, 
+                behavior: "smooth"
+            });
+        }
+    </script>
+</body>
+</html>

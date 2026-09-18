@@ -44,9 +44,9 @@
         function saveBtn(){
             var nlist = document.getElementById("tbody");
             var name = document.getElementById("name").value; 
-            var kor = document.getElementById("kor").value;
-            var eng = document.getElementById("eng").value;
-            var math = document.getElementById("math").value;
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
             
             var total = Number(kor) + Number(eng) + Number(math);
             var avg = total / 3;
