@@ -12,15 +12,70 @@
         margin:50px auto;}
         th{background: #efefef; height:60px;}
         td{height:40px;}
+        
+
     </style>
     <script>
-        //제이쿼리 선언
+        var student = [
+            {"no":1,"name":"홍길동","kor":100,"eng":100,"math":100,"total":300,"avg":100.0,"rank":0},
+            {"no":2,"name":"유관순","kor":100,"eng":100,"math":100,"total":300,"avg":100.0,"rank":0},
+
+        ];
+
+        //제이쿼리 선언 함수는 여기에 써야함. 
         $(function(){
+            // 제이쿼리 이벤트 
+            // on : 동적 이벤트
+            $("#math").on("keydown",function(e){
+                if (e.key === "Enter"){
+                    saveBtn();
+                }          
+            }); // keydown 부분 ---------------------------------------
+
+            // 이름 버튼에서 빠지면 노란색으로 변함 
+               // $("#name").on("focus", function(){
+               //     $("#name").css({"background":"yellow"})   
+               //  });
+            // 이름 버튼에서 빠지면 노란색 사라짐 
+               // $("#name").on("blur", function(){
+                  //  $("name").css({"background":""})   
+                // }); // focus & #name & blur 부분 -----------------------------
+
+            // 버튼 위에 가면 그 버튼만 노란색으로 변함
+            $("input").on("focus", function(){
+                $(this).css({"background":"yellow"})   
+            });
+            // 버튼에서 빠지면 노란색 사라짐
+            $("input").on("blur", function(){
+                $(this).css({"background":""})   
+            }); // focus & input & blur 부분 ---------------------------------
+
+            // 동적함수이지만, 정적함수형태로 진행. 기존 정보만 삭제 가능. 추가된 정보는 기억을 하지 못해 처리 불가 
+            $(".delete").on("click", function(){
+            });
+
+            // 문서 전체를 다시 읽는 동적함수 
+            $(document).on("click",".delete", function(){
+                if(confirm("학생성적을 삭제하시겠습니까?")){
+                    var delno = console.log($(this).closest("tr").attr("id")); // arr : 속성값 가지고 오라는 기능 
+                    // $("요소선택").parent(), $("요소선택").parents(), $("요소선택").children(), $("요소선택").next(), $("요소선택").preview(), $("요소선택").sibling(), $("요소선택").closest()
+                    // $("요소선택").parent.parents() 
+                    $("#"+delno).remove();
+;                    
+                }
+            }); // 삭제 기능 및 속성 값 선택 및 가져오는 기능 ----------------------
+            
+
+
 
 
         });//제이쿼리
+        
         function saveBtn(){
-            //alert("test");
+            // value->val(), innerText->text(), innerHTML->html() 
+            // html() : 새롭게 추가 (입력하면 새로운 정보만 남음. 이전 정보 사라짐)
+            // append(): 기존태그에 뒤에 추가 
+            // propend() : 기존태그 앞에 추가 
             var no = $("#no").val();
             var name = $("#name").val();
             var kor = Number($("#kor").val());
@@ -28,6 +83,33 @@
             var math =  Number($("#math").val());
             var total = kor+eng+math;
             var avg = total/3;
+        var txtHtml = `
+            <tr id="{students[i].no}">
+                <td>${no}</td>
+                <td>${name}</td>
+                <td>${kor}</td>
+                <td>${eng}</td>
+                <td>${math}</td>
+                <td>${total}</td>
+                <td>${avg}</td>
+                <td>0</td>
+                <td>
+                    <button class="update">수정</button>
+                    <button class="delete">삭제</button>
+                </td>
+                </tr>
+            `;
+            $("#tbody").append(txtHtml); // 뒤에 추가 
+            // $("#tbody").prepend(txtHtml); 앞에 추가 
+            //$("#tbody").html(txtHtml); // 새로운 정보 추가 (이전 정보 사라짐)
+            alert("학생성적을 저장합니다.");
+            // 데이터 초기화 
+            $("#no").val("");  
+            $("#name").val(""); 
+            $("#kor").val(""); 
+            $("#eng").val(""); 
+            $("#math").val(""); 
+            $("#no").focus();           
 
             console.log(no,name,kor,eng,math,total,avg)
         }
@@ -72,26 +154,29 @@
     </table>
 
     <script>
+        // 배열추가 : push, 삭제 : pop 
         //반복문 사용 : 10번
-        var a = ``;
-        for(var i=1;i<=1;i++){
-            a += `<tr>
-                <td>${i}</td>
-                <td>홍길동</td>
-                <td>100</td>
-                <td>100</td>
-                <td>100</td>
-                <td>300</td>
-                <td>100.0</td>
-                <td>0</td>
+        // 반복문 students 배열을 가지고 옴 
+        var stu = ``;
+        for(var i=0; i<student.length; i++){ 
+            stu += `<tr id="${student[i].no}"> 
+                <td>${student[i].no}</td>
+                <td>${student[i].name}</td>
+                <td>${student[i].kor}</td> 
+                <td>${student[i].eng}</td>
+                <td>${student[i].math}</td>
+                <td>${student[i].total}</td>
+                <td>${student[i].avg}</td>
+                <td>${student[i].rank}</td>
                 <td>
-                    <button>수정</button>
-                    <button>삭제</button>
+                    <button class="update">수정</button>
+                    <button class="delete">삭제</button>
                 </td>
                 </tr>`;
         }
 
-        document.getElementById("tbody").innerHTML=a;
+        document.getElementById("tbody").innerHTML=stu;
+        $("#tbody").htnml(stu); 
 
 
     </script>
