@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <style>
+        #txt{width: 200px; height: 40px; border: 1px solid black; text-align: center; line-height: 40px;}
+    </style>
+    <script>
+        // 제이쿼리 구문. 함수는 무조건 이 안에 있어야함.
+            $(function(){
+                //정적함수. 기존에 있는 객체에 적용이 되나 새롭게 생긴 객체에는 적용이 안됨
+                $("#saveBtn").click(function(){
+                    // var input = $("#kor").val();
+                    // $("#txt").text(300);
+                    //$("#txt").text($("#kor").val()); 
+                    
+                    //국어+영어+수학점수 합계 점이 txt 에 넣을 수 있게 구현하시오.
+    
+                    var kor = Number($("#kor").val());
+                    var eng = Number($("#eng").val());
+                    var math = Number($("#math").val());
+                    var total = kor+eng+math; 
+                    $("#txt").text(total); 
+    
+                    }); // 합계 계산 
+
+                    
+                    // h2 에 있는 값을 txt에 넣을 수 있게 구현하시오.
+                    $("#conBtn").click(function(){
+                        $("#txt").text($(".h2").text()); 
+                    })
+                    //동적함수 새롭게 추가된 객체에도 적용 가능 여러 개의 이벤트를 한번에 적용 가능 
+                    $(document).on("click change mouseover", "#conBtn", function(){
+                        $("#txt").text($(".h2").text())
+                    });                  
+            }) ;       
+
+        // 자바스크립트 함수 
+        // function btn(){}
+
+    </script>
+</head>
+<body>
+    <h1 id="h1">안녕하세요</h1>
+    <h2 class="h2">12345</h2>
+    <input type="text" name="kor" id="kor"><br>
+    <input type="text" name="eng" id="eng"><br>
+    <input type="text" name="math" id="math"><br>
+    <button type="button" id="saveBtn">저장</button>
+    <button type="button" id="conBtn">가져오기</button>
+    <br>
+    <div id="txt">0</div>
+
+    <script>
+        console.log("데이터 :" +1);
+
+        var a = document.getElementById("h1").innerText;
+        console.log(a); 
+        var b = $("#h1").text();
+        console.log("jquery b" +b);
+    </script>
+</body>
+</html>
