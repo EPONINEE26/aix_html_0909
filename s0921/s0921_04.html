@@ -21,7 +21,6 @@
             var id = "";
             var no=0,name="",kor=0,eng=0,math=0,total=0,avg=0,rank=0;
 
-
             $(document).on("click",".deleteBtn",function(){
                 console.log("tr id : ",$(this).parent().parent().attr("id"));
                 id = $(this).parent().parent().attr("id");
@@ -95,8 +94,9 @@
                     alert("학생성적이 수정되었습니다.");
                 }//if
             });//saveBtn
-            $(document).on("click",".updateBtn",function(){
 
+            //수정버튼클릭
+            $(document).on("click",".updateBtn",function(){
                 $("#txtTitle").text("학생성적수정");
                 $("#saveBtn").text("수정완료");
                 $("#conBtn").text("취소");
@@ -118,8 +118,38 @@
                 $("#eng").val(eng);
                 $("#math").val(math);
             });//updateBtn
+
+            //가져오기,취소버튼
             $(document).on("click","#conBtn",function(){
                 if($(this).text() == "가져오기"){
+                    $.ajax({
+                        url:"js/stu.json",
+                        type:"get", //get,post
+                        data:"",    //보내는데이터
+                        dataType:"json", //받는타입
+                        success:function(data){ //받는곳:data
+                            alert("데이터 가져오기 완료");
+                            console.log(data);
+                            var txthtml = ``;
+                            for(var i=0;i<100;i++){ //100번반복
+                                txthtml += `
+                                <tr id="${data[i].no}">
+                                    <td>${data[i].no}</td><td>${data[i].name}</td><td>${data[i].kor}</td>
+                                    <td>${data[i].eng}</td><td>${data[i].math}</td><td>${data[i].total}</td>
+                                    <td>${data[i].avg}</td><td>${data[i].rank}</td>
+                                    <td>
+                                        <button type="button" class="updateBtn">수정</button>
+                                        <button type="button" class="deleteBtn">삭제</button>
+                                    </td>
+                                </tr>
+                                `;
+                                $("#tbody").html(txthtml); //100개의 리스트완성
+                            }//for
+                        },
+                        fail:function(){
+                            alert("실패");
+                        }
+                    });//ajax
 
                 }else{
                     alert("학생성적을 취소합니다.");

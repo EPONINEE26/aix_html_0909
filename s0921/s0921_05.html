@@ -16,11 +16,12 @@
         button{width:80px; height:35px;}
     </style>
     <script>
-        $(function(){
-            $(document).on("click", ".deleteBtn", function(){
-                if(confirm("성적을 삭제하시겠습니까?")) 
-                    $("#1").remove(); 
-            }); //deleteBtn
+            $(document).on("click",".deleteBtn",function(){
+                console.log("tr id : ",$(this).parent().parent().attr("id"));
+                id = $(this).parent().parent().attr("id");
+
+                if(confirm("성적을 삭제하시겠습니까?")){
+                    $("#"+id).remove();
 
             $("#saveBtn").click(function(){                
                 var no = parseInt($("#no").val());
