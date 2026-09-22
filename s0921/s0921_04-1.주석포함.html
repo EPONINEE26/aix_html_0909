@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
+    <title>학생성적프로그램</title>
+    <style>       
+        *{margin:0; padding:0;} 
+        div{width:1200px; margin:0 auto; text-align: center;} 
+        h2{margin:20px 0 10px 0;} 
+        table,th,td{border:1px solid black; border-collapse: collapse;} 
+        table{width:1200px;} 
+        th,td{height:40px;} 
+        th{background: #efefef;} 
+        button{width:80px; height:35px;} 
+    </style>
+    <script> 
+        $(function(){
+            //전역변수
+            // 아래 상자들은 파일 전체에서 함께 쓰는 "공용 상자". (전역변수 = 어디서나 꺼내 쓸 수 있는 상자)
+            var id = ""; // 지금 [수정]이나 [삭제]를 하려고 고른 "성적표 표의 한 줄"의 이름표(id)를 담는 상자
+            var no=0,name="",kor=0,eng=0,math=0,total=0,avg=0,rank=0; 
+
+            // [삭제] 버튼을 눌렀을 때 하는 일
+            // .deleteBtn 은 성적표 표에서, 각 학생 줄의 9번째 칸(비고 칸) 안에 있는 [삭제] 버튼을 가리키는 말.
+            // 이렇게 하면 나중에 새로 추가한 학생 줄의 [삭제] 버튼도 자동으로 작동함 (동적 이벤트)
+            $(document).on("click",".deleteBtn",function(){
+                console.log("tr id : ",$(this).parent().parent().attr("id")); 
+                id = $(this).parent().parent().attr("id"); // $(this)=내가 누른 [삭제] 버튼. 그 버튼 -> 담고 있는 9번째 칸(비고 칸) -> 그 칸이 들어있는 학생 한 줄(tr), 이렇게 올라가서 그 줄의 이름표(id)를 상자에 저장함.
+                
+                if(confirm("성적을 삭제하시겠습니까?")){
+                    $("#"+id).remove(); // 성적표 표에서, 이름표(id)가 위에서 저장한 id와 똑같은 학생 줄을 통째로 지움. (예: id가 "2"면 "#2"가 되어 유관순 학생 줄이 사라짐. 
+                }
+            });//deleteBtn 
+
+            //동적이벤트함수
+            // [저장] 버튼(화면 아래 "저장"이라고 적힌 버튼)을 눌렀을 때 하는 일
+            // 이 [저장] 버튼 하나가 "저장"과 "수정완료" 두 가지 일을 모두 진행. (글자에 따라 갈라짐)
+            $(document).on("click","#saveBtn",function(){
+                // alert("확인 : "+$(this).text())   
+                if ($(this).text()=="저장"){ // 버튼에 적힌 글자가 "저장"이면 -> 새 학생을 성적표에 추가하는 경우.
+                    no = Number($("#no").val());   
+                    name = $("#name").val();       
+                    kor = Number($("#kor").val()); 
+                    eng = Number($("#eng").val()); 
+                    math = Number($("#math").val()); 
+                    total = kor+eng+math;          
+                    avg = total/3;                
+                    rank = 0;                    
+                    // 아래는 ``(백틱)으로 감싼 "글자 조합 틀". ${ } 안에 상자 이름(no, name, kor...)을 넣으면, 그 자리에 상자 안의 값이 대신 들어감
+                    // 여기서는 성적표 표에 새로 넣을 "학생 한 줄"을 만드는 거
+                    // 새로 만드는 학생 줄의 9번째 칸(비고 칸) 안에는 [수정] 버튼과 [삭제] 버튼도 함께 넣음
+                    var txthtml = `
+                    <tr id="${no}">
+                        <td>${no}</td><td>${name}</td><td>${kor}</td>
+                        <td>${eng}</td><td>${math}</td><td>${total}</td>
+                        <td>${avg}</td><td>${rank}</td>
+                        <td>
+                            <button type="button" class="updateBtn">수정</button>
+                            <button type="button" class="deleteBtn">삭제</button>
+                        </td>
+                    </tr>
+                    `;
+                    $("#tbody").append(txthtml); // #tbody = 성적표 표에서 제목 줄(번호/이름...) 바로 아래, 학생 줄들이 들어 있는 부분. 여기 맨 밑에 방금 만든 학생 줄을 붙임(append=뒤에 붙이기).
+                    
+                    //데이터초기화                    
+                    $("#no").val("");
+                    $("#name").val("");
+                    $("#kor").val("");
+                    $("#eng").val("");
+                    $("#math").val("");
+                    alert("학생성적이 저장되었습니다."); 
+                }else{                       //수정완료   // 버튼 글자가 "저장"이 아니면(="수정완료") -> 고치기를 마무리하는 경우
+                    no = Number($("#no").val());   // 고친 값들을 입력칸 5개에서 다시 읽어 옴.
+                    name = $("#name").val();
+                    kor = Number($("#kor").val());
+                    eng = Number($("#eng").val());
+                    math = Number($("#math").val());
+                    total = kor+eng+math; 
+                    avg = total/3;        
+                    rank = 0;             
+                    // 이번엔 <tr>(학생 줄 전체) 없이 "칸(td) 9개"만 만듬
+                    // 이미 성적표에 있는 그 학생 줄의 속 내용만 바꿔 끼울 거라는 의미
+                    var txthtml = `
+                        <td>${no}</td><td>${name}</td><td>${kor}</td>
+                        <td>${eng}</td><td>${math}</td><td>${total}</td>
+                        <td>${avg}</td><td>${rank}</td>
+                        <td>
+                            <button type="button" class="updateBtn">수정</button>
+                            <button type="button" class="deleteBtn">삭제</button>
+                        </td>
+                    `;
+                    $("#"+id).html(txthtml); // 아까 기억해 둔 이름표(id)의 학생 줄 속을, 방금 만든 칸 9개로 새로 채움(html=속을 새로 채우기).
+                    //타이틀 변경
+                    // 수정이 끝났으니 다시 "새로 입력하는 모드"로 되돌림
+                    $("#txtTitle").text("학생성적입력"); 
+                    $("#saveBtn").text("저장");         
+                    $("#conBtn").text("가져오기"); 
+
+                    //데이터초기화
+                    $("#no").val("");    
+                    $("#name").val("");
+                    $("#kor").val("");
+                    $("#eng").val("");
+                    $("#math").val("");
+                    alert("학생성적이 수정되었습니다."); 
+                }//if  
+            });//saveBtn
+
+            //수정버튼클릭
+            // 성적표 표에서 각 학생 줄의 9번째 칸(비고 칸) 안에 있는 [수정] 버튼을 눌렀을 때 하는 일
+            // 그 학생 줄의 값들을 위 입력칸 5개로 옮겨 옴. (그래서 바로 고칠 수 있음)
+            $(document).on("click",".updateBtn",function(){
+                $("#txtTitle").text("학생성적수정"); 
+                $("#saveBtn").text("수정완료");      
+                $("#conBtn").text("취소");          
+                var tr = $(this).parent().parent();  // 내가 누른 [수정] 버튼 -> 담고 있는 9번째 칸(비고 칸) -> 그 칸이 들어있는 학생 한 줄(tr), 이렇게 올라가 학생 그 줄(tr)을 잡음
+
+                id = tr.attr("id"); //전역변수에 저장   // 그 학생 줄의 이름표(id)를 상자에 기억해 둠. (나중에 그 줄을 바꿀 때 필요함.
+
+                // eq(0)은 "0번째 칸"이라는 뜻. 학생 줄 안의 칸 9개를 순서대로 읽어 옴
+                no = tr.find("td:eq(0)").text();   
+                name = tr.find("td:eq(1)").text(); 
+                kor = tr.find("td:eq(2)").text();  
+                eng = tr.find("td:eq(3)").text(); 
+                math = tr.find("td:eq(4)").text(); 
+                total = tr.find("td:eq(5)").text();
+                avg = tr.find("td:eq(6)").text();  
+                rank = tr.find("td:eq(7)").text(); 
+                $("#no").val(no);     // 읽어 온 값들을 위 입력칸 5개에 채워 넣음.
+                $("#name").val(name); // (9번째 칸은 버튼 자리라서 안 읽음)
+                $("#kor").val(kor);
+                $("#eng").val(eng);
+                $("#math").val(math);
+            });//updateBtn
+
+            //가져오기,취소버튼
+            // 화면 아래 [가져오기] 버튼을 눌렀을 때 하는 일. 버튼 글자에 따라 두 가지로 나눔.
+            $(document).on("click","#conBtn",function(){
+                if($(this).text() == "가져오기"){ // 버튼 글자가 "가져오기"면 -> 인터넷에 있는 점수 파일(stu.json)에서 학생들을 가져옴
+                   
+                    $.ajax({
+                        url:"js/stu.json", // 가져올 파일의 주소, (이 파일이 없으면 실패 팝업이 뜸)
+                        type:"get", //get,post  // 가져오는 방식. 
+                        data:"",    //보내는데이터  // 같이 보낼 내용은 빈 값.
+                        dataType:"json", //받는타입  // 받을 내용의 모양은 json(목록표) 형식
+                        success:function(data){ //받는곳:data  // 잘 가져왔을 때 실행되는 곳. data 안에 학생 100명의 목록이 담김
+                            alert("데이터 가져오기 완료"); 
+                            console.log(data); 
+
+                            var txthtml = ``; // 성적표 표에 넣을 학생 줄들을 담을 빈 상자를 만듬
+                            for(var i=0;i<100;i++){ //100번반복  // 0번부터 99번까지 100번 반복함. (학생 100명 분)
+                                // data[i]는 i번째 학생이라는 의미. 그 학생의 값을 성적표 표의 한 줄로 만들어 이어 붚임(+=).
+                                txthtml += `
+                                <tr id="${data[i].no}">
+                                    <td>${data[i].no}</td><td>${data[i].name}</td><td>${data[i].kor}</td>
+                                    <td>${data[i].eng}</td><td>${data[i].math}</td><td>${data[i].total}</td>
+                                    <td>${data[i].avg}</td><td>${data[i].rank}</td>
+                                    <td>
+                                        <button type="button" class="updateBtn">수정</button>
+                                        <button type="button" class="deleteBtn">삭제</button>
+                                    </td>
+                                </tr>
+                                `;
+                                $("#tbody").html(txthtml); //100개의 리스트완성  // 지금까지 만든 100명의 학생 줄을 성적표 표의 몸통(#tbody)에 넣음
+                            }//for  <-- 여기까지가 for 반복문이라는 표시
+                        },
+                        fail:function(){ 
+                            alert("실패"); 
+                        }
+                    });//ajax  
+
+                }else{ // 버튼 글자가 "가져오기"가 아니면(="취소") -> 가져오기를 그만두고 처음 상태로 되돌림
+                    alert("학생성적을 취소합니다."); 
+                    //글자변경
+                    // 버튼과 제목 글자를 원래대로 되돌림
+                    $("#txtTitle").text("학생성적입력"); 
+                    $("#saveBtn").text("저장");         
+                    $("#conBtn").text("가져오기");       
+                    //데이터초기화
+                    // 입력칸 5개를 비움
+                    $("#no").val("");
+                    $("#name").val("");
+                    $("#kor").val("");
+                    $("#eng").val("");
+                    $("#math").val("");
+                }
+            });//conBtn
+
+        });//제이쿼리  
+    </script>
+</head>
+<body>    
+    <div> 
+        <h2 id="txtTitle">학생성적입력</h2> 
+        <input type="text" name="no" id="no" placeholder="번호입력"><br> 
+        <input type="text" name="name" id="name" placeholder="이름입력"><br>
+        <input type="text" name="kor" id="kor" placeholder="국어입력"><br> 
+        <input type="text" name="eng" id="eng" placeholder="영어입력"><br> 
+        <input type="text" name="math" id="math" placeholder="수학입력"><br> 
+        <br>
+        <button type="button" id="saveBtn">저장</button>
+        <button type="button" id="conBtn">가져오기</button> 
+
+        <h2>학생성적리스트</h2> 
+        <table> 
+            <colgroup>
+                <col width="10%"> 
+                <col width="15%"> 
+                <col width="10%"> 
+                <col width="10%"> 
+                <col width="10%"> 
+                <col width="10%"> 
+                <col width="10%"> 
+                <col width="10%"> 
+                <col width="15%"> 
+            </colgroup>
+            <tr> 
+                <th>번호</th>  
+                <th>이름</th> 
+                <th>국어</th> 
+                <th>영어</th> 
+                <th>수학</th> 
+                <th>합계</th> 
+                <th>평균</th> 
+                <th>등수</th> 
+                <th>비고</th> 
+            </tr>
+            <tbody id="tbody">  
+            <tr id="1"> 
+                <td>1</td>        
+                <td>홍길동</td>   
+                <td>100</td>       
+                <td>100</td>       
+                <td>100</td>      
+                <td>300</td>       
+                <td>100.0</td>    
+                <td>0</td>         
+                <td>  
+                    <button type="button" class="updateBtn">수정</button>
+                    <button type="button" class="deleteBtn">삭제</button>
+                </td>
+            </tr>
+            <tr id="2"> 
+                <td>유관순</td>    
+                <td>100</td>      
+                <td>100</td>       
+                <td>100</td>       
+                <td>300</td>       
+                <td>100.0</td>     
+                <td>0</td>         
+                <td> 
+                    <button type="button" class="updateBtn">수정</button>
+                    <button type="button" class="deleteBtn">삭제</button>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
